@@ -1,7 +1,7 @@
 01\_introduction\_to\_irtfun2
 ================
 T.SHIBUYA
-2019/1/18
+2019/1/18  
 Turn to [home](takuizum.github.io)
 ## `irtfun2` とは。
 
