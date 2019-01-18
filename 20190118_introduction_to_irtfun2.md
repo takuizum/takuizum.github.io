@@ -2,7 +2,7 @@
 ================
 T.SHIBUYA
 2019/1/18
-
+Turn to [home](takuizum.github.io)
 ## `irtfun2` とは。
 
 `irtfun2`は私が作成，維持している項目反応理論 (Item Response Theory, IRT)
@@ -245,3 +245,5 @@ res_irtoys$se
 ```
 
 　推定値自体が小数点第3位あたりでずれているので，まあ概ね一致していると言えるでしょう。
+
+Turn to [home](takuizum.github.io)
