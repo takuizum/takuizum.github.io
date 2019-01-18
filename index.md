@@ -2,11 +2,13 @@
 
 You can use the [editor on GitHub](https://github.com/takuizum/takuizum.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
-この上のリンクから，mdファイルをいじってサイトをメンテナンスできるみた。
+この上のリンクから，mdファイルをいじってサイトをメンテナンスできるみたい。
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
+
+マークダウン記法の説明だね。
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
@@ -24,6 +26,8 @@ Syntax highlighted code block
 2. List
 
 **Bold** and _Italic_ and `Code` text
+
+これでリンクを埋め込めるらしい。
 
 [Link](url) and ![Image](src)
 ```
