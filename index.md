@@ -10,7 +10,7 @@
 <img src="https://latex.codecogs.com/png.latex?P(\theta)=\frac{1}{1&plus;\rm{exp}\it\left(-Da(\theta-b)\right)}" title="P(\theta)=\frac{1}{1+\rm{exp}\it\left(-Da(\theta-b)\right)}" />
 </div>
 
-です。aは識別力を，bは困難度，\thetaは受験者の特性値（能力）を表します。    
+です。aは識別力を，bは困難度，<img src="https://latex.codecogs.com/png.latex?\theta" title="\theta" />は受験者の特性値（能力）を表します。    
  IRTモデルは多変量解析の一種であり，因子分析 (Factor Analysis) とも理論的な関連があります。具体的にはカテゴリカルデータの因子分析がIRTに一致するというものです。
 
 
