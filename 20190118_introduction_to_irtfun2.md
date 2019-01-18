@@ -3,6 +3,7 @@
 T.SHIBUYA
 2019/1/18  
 Turn to [home](takuizum.github.io)
+
 ## `irtfun2` とは。
 
 `irtfun2`は私が作成，維持している項目反応理論 (Item Response Theory, IRT)
@@ -66,10 +67,10 @@ system.time(
 
 ``` 
    user  system elapsed 
-   3.78    0.01    3.94 
+   3.51    0.01    3.58 
 ```
 
-実行速度はおおよそ3秒といったところでしょうか。
+実行速度はおおよそ3.5秒といったところでしょうか。`estip`ではパラメタ推定後にもう一回EMサイクルを回して母集団分布を推定しているので，それを差し引けば多分2秒程度です。
 
 　次に`irtoys`パッケージの`est`関数から`ltm`パッケージをたたいて，推定速度を比較してみましょう。今回使ったデータである`sim_dat_2`には一行目に受検者IDが入っていますので，それを取り除いて，`est`に渡してやります。ちなみにestは尺度定数を含んでいないので，D=1で計算されます。
 
@@ -82,10 +83,10 @@ system.time(
 
 ``` 
    user  system elapsed 
-  11.67    4.53   16.47 
+  11.75    4.36   16.22 
 ```
 
-　14秒弱。こういっちゃなんですが，めっちゃ遅いですね。Hansonによるプログラム[ICL(IRT Command Language
+　16秒。こういっちゃなんですが，めっちゃ遅いですね。Hansonによるプログラム[ICL(IRT Command Language
 )](http://www.openirt.com/b-a-h/software/irt/icl/icl_manual.pdf)をセットアップ済みであれば，engin=“icl”\`とすると高速になります。多分1秒かからないで計算できます。しかし，その場合推定の標準誤差を自分で計算する必要があるので面倒です。
 
 　続いて，推定結果の比較です。 　 　
@@ -245,5 +246,6 @@ res_irtoys$se
 ```
 
 　推定値自体が小数点第3位あたりでずれているので，まあ概ね一致していると言えるでしょう。
-
+ 
 Turn to [home](takuizum.github.io)
+
