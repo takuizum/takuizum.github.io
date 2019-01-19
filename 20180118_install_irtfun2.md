@@ -1,3 +1,5 @@
+# Workstation of takuizum
+
 20180118\_install\_irtfun2
 ================
 T.SHIBUYA
@@ -54,13 +56,13 @@ devtools::install_github("takuizum/irtfun2")
     ## Installing packages into '/Users/takuizum/Library/R/3.5/library'
     ## (as 'lib' is unspecified)
 
-    ## 
+    ##
     ##   There is a binary version available but the source version is
     ##   later:
     ##       binary source needs_compilation
     ## knitr   1.20   1.21             FALSE
-    ## 
-    ## 
+    ##
+    ##
     ## The downloaded binary packages are in
     ##  /var/folders/11/87n0fpwj2zx53hmphpnxz6q00000gn/T//RtmpjRcEnP/downloaded_packages
 
@@ -68,35 +70,35 @@ devtools::install_github("takuizum/irtfun2")
 
     ##   
        checking for file ‘/private/var/folders/11/87n0fpwj2zx53hmphpnxz6q00000gn/T/RtmpjRcEnP/remotes69364dcbf64e/takuizum-irtfun2-9f386a9/DESCRIPTION’ ...
-      
+
     ✔  checking for file ‘/private/var/folders/11/87n0fpwj2zx53hmphpnxz6q00000gn/T/RtmpjRcEnP/remotes69364dcbf64e/takuizum-irtfun2-9f386a9/DESCRIPTION’ (414ms)
-    ## 
-      
+    ##
+
     ─  preparing ‘irtfun2’:
-    ## 
-      
+    ##
+
        checking DESCRIPTION meta-information ...
-      
+
     ✔  checking DESCRIPTION meta-information
-    ## 
-      
+    ##
+
     ─  cleaning src
-    ## 
-      
+    ##
+
     ─  checking for LF line-endings in source and make files and shell scripts (374ms)
-    ## 
-      
+    ##
+
     ─  checking for empty or unneeded directories
-    ## 
-      
+    ##
+
     ─  looking to see if a ‘data/datalist’ file should be added
-    ## 
-      
+    ##
+
     ─  building ‘irtfun2_0.6.7.0.tar.gz’
-    ## 
-      
-       
-    ## 
+    ##
+
+
+    ##
 
     ## Installing package into '/Users/takuizum/Library/R/3.5/library'
     ## (as 'lib' is unspecified)

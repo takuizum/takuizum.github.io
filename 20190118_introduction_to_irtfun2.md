@@ -1,3 +1,5 @@
+# Workstation of takuizum
+
 01\_introduction\_to\_irtfun2
 ================
 T.SHIBUYA
@@ -44,36 +46,36 @@ system.time(
     The number of item is 30.
     The number of remove item is 0.
     Start calculating estimated item parameters.
-    1 times -2 Marginal Log Likelihood is 95474.913018 
-    2 times -2 Marginal Log Likelihood is 85752.028118 
-    3 times -2 Marginal Log Likelihood is 85214.299600 
-    4 times -2 Marginal Log Likelihood is 84811.020518 
-    5 times -2 Marginal Log Likelihood is 84750.515248 
-    6 times -2 Marginal Log Likelihood is 84734.466952 
-    7 times -2 Marginal Log Likelihood is 84732.846787 
-    8 times -2 Marginal Log Likelihood is 84732.717677 
-    9 times -2 Marginal Log Likelihood is 84732.704531 
-    10 times -2 Marginal Log Likelihood is 84732.702835 
-    11 times -2 Marginal Log Likelihood is 84732.702593 
-    12 times -2 Marginal Log Likelihood is 84732.702557 
-    13 times -2 Marginal Log Likelihood is 84732.702551 
-    14 times -2 Marginal Log Likelihood is 84732.702551 
+    1 times -2 Marginal Log Likelihood is 95474.913018
+    2 times -2 Marginal Log Likelihood is 85752.028118
+    3 times -2 Marginal Log Likelihood is 85214.299600
+    4 times -2 Marginal Log Likelihood is 84811.020518
+    5 times -2 Marginal Log Likelihood is 84750.515248
+    6 times -2 Marginal Log Likelihood is 84734.466952
+    7 times -2 Marginal Log Likelihood is 84732.846787
+    8 times -2 Marginal Log Likelihood is 84732.717677
+    9 times -2 Marginal Log Likelihood is 84732.704531
+    10 times -2 Marginal Log Likelihood is 84732.702835
+    11 times -2 Marginal Log Likelihood is 84732.702593
+    12 times -2 Marginal Log Likelihood is 84732.702557
+    13 times -2 Marginal Log Likelihood is 84732.702551
+    14 times -2 Marginal Log Likelihood is 84732.702551
     EM algorithm has been converged.
     Total iteration time is 14
     Start calculating estimated population distribution.
-    1 times -2 Marginal Log Likelihood is 90759.040910 
-    2 times -2 Marginal Log Likelihood is 84813.300946 
-    3 times -2 Marginal Log Likelihood is 84731.271064 
-    4 times -2 Marginal Log Likelihood is 84723.558501 
-    5 times -2 Marginal Log Likelihood is 84721.421429 
-    6 times -2 Marginal Log Likelihood is 84720.456940 
-    7 times -2 Marginal Log Likelihood is 84719.905301 
-    8 times -2 Marginal Log Likelihood is 84719.546095 
-    9 times -2 Marginal Log Likelihood is 84719.293705 
+    1 times -2 Marginal Log Likelihood is 90759.040910
+    2 times -2 Marginal Log Likelihood is 84813.300946
+    3 times -2 Marginal Log Likelihood is 84731.271064
+    4 times -2 Marginal Log Likelihood is 84723.558501
+    5 times -2 Marginal Log Likelihood is 84721.421429
+    6 times -2 Marginal Log Likelihood is 84720.456940
+    7 times -2 Marginal Log Likelihood is 84719.905301
+    8 times -2 Marginal Log Likelihood is 84719.546095
+    9 times -2 Marginal Log Likelihood is 84719.293705
 
-``` 
-   user  system elapsed 
-   3.51    0.01    3.58 
+```
+   user  system elapsed
+   3.51    0.01    3.58
 ```
 
 実行速度はおおよそ3.5秒といったところでしょうか。`estip`ではパラメタ推定後にもう一回EMサイクルを回して母集団分布を推定しているので，それを差し引けば多分2秒程度です。
@@ -87,9 +89,9 @@ system.time(
 )
 ```
 
-``` 
-   user  system elapsed 
-  11.75    4.36   16.22 
+```
+   user  system elapsed
+  11.75    4.36   16.22
 ```
 
 　16秒。こういっちゃなんですが，めっちゃ遅いですね。Hansonによるプログラム[ICL(IRT Command Language
@@ -101,7 +103,7 @@ system.time(
 res$para
 ```
 
-``` 
+```
    Item         a            b c model
 1  A001 1.4561439 -0.904402665 0   2PL
 2  A002 1.3041904 -0.049954597 0   2PL
@@ -139,7 +141,7 @@ res$para
 res_irtoys$est
 ```
 
-``` 
+```
           [,1]          [,2] [,3]
 A001 1.4543992 -0.9083046905    0
 A002 1.3019194 -0.0528026341    0
@@ -179,7 +181,7 @@ A030 1.1103365  1.0222292055    0
 res$SE
 ```
 
-``` 
+```
    Item          a          b c model
 1  A001 0.06279092 0.03890351 0   2PL
 2  A002 0.05475825 0.03234224 0   2PL
@@ -217,7 +219,7 @@ res$SE
 res_irtoys$se
 ```
 
-``` 
+```
             [,1]       [,2] [,3]
  [1,] 0.07053757 0.04537262    0
  [2,] 0.06114222 0.03728654    0
@@ -252,6 +254,5 @@ res_irtoys$se
 ```
 
 　推定値自体が小数点第3位あたりでずれているので，まあ概ね一致していると言えるでしょう。
- 
-Turn to [home](takuizum.github.io)
 
+Turn to [home](takuizum.github.io)
