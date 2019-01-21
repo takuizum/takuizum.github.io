@@ -4,7 +4,7 @@
 ================
 T.SHIBUYA
 2019/1/18  
-Turn to [home](https://takuizum.github.io)
+Turn to [home](index.html)
 
 ## `irtfun2` とは。
 
