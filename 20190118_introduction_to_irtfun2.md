@@ -255,4 +255,4 @@ res_irtoys$se
 
 　推定値自体が小数点第3位あたりでずれているので，まあ概ね一致していると言えるでしょう。
 
-Turn to [home](takuizum.github.io)
+Turn to [home](index.html)

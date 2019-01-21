@@ -4,7 +4,7 @@
 ================
 T.SHIBUYA
 2019/1/21
-Turn to [home](takuizum.github.io)
+Turn to [home](index.html)
 
 # Stanで確認的因子分析
 
@@ -564,4 +564,4 @@ print(res_mcmc, pars = c("R", "A"))
 本当はEMアルゴリズムで付随(incidental)母数を積分消去してから推定すると，速度も速く，推定結果も一致性があるため望ましい。Stanでも周辺化してから推定するコードを書くことができるようだが，それはまた今度。
 
 
-Turn to [home](takuizum.github.io)
+Turn to [home](index.html)

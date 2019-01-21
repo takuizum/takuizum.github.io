@@ -4,7 +4,7 @@
 ================
 T.SHIBUYA
 1/18/2019  
-Turn to [home](takuizum.github.io)
+Turn to [home](index.html)
 
 ## install irtfun2
 
@@ -106,4 +106,4 @@ devtools::install_github("takuizum/irtfun2")
 これでインストール完了です。
 
 Have a good irtfun2 life\!  
-Turn to [home](takuizum.github.io)
+Turn to [home](index.html)
