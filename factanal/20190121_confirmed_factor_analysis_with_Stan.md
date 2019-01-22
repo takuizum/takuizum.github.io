@@ -236,26 +236,7 @@ Resduals)。RMRは標本共分散行列とモデルから計算された共分�
 ## Stan編
 
 確率モデルを考えればStanでBayesian
-CFAが実行できる。
-
-ただしStanでは確率モデルを扱うため，モデルは，
-
-\[
-X \sim Normal(\mu+\Lambda'\theta, \epsilon)
-\] である。ただし， \[
-\mu \sim Normal(0,3)
-\] \[
-\Lambda \sim Normal(0,3)
-\] \[
-\theta \sim Normal(0, 1)
-\] \[
-\epsilon \sim weible(2, 1)
-\]
-
-である。
-
-このとき，因子負荷行列には回転の不定性があるためコレスキー因子相関行列を使って，第一変量の因子負荷が正となるように制約をかけておく。コレスキー因子相関行列の事前分布については[こちら](https://www.psychstatistics.com/2014/12/27/d-lkj-priors/)を参照されたい。
-
+CFAが実行できる。ただし，尺度の不定性には注意が必要で，相関行列のコレスキー因子を使って制約をかける必要がある。
 
 [偉大なる先人](https://gist.github.com/mike-lawrence/dd2435f290a567bd1fd03370ee669688)のコードを丸コピーして，ちょっと表記を変えたものが以下のコード。
 
@@ -580,11 +561,7 @@ print(res_mcmc, pars = c("R", "A"))
     and Rhat is the potential scale reduction factor on split chains (at
     convergence, Rhat=1).
 
-本当はEMアルゴリズムで付随(incidental)母数を積分消去してから推定すると，速度も速く，推定結果も安定するため望ましい。Stanでも周辺化してから推定するコードを書くことができるようだが，それはまた今度。
-
-## まとめにかえて
-
-今回，StanコードをRmdに混ぜて資料を作ったが，多分二度とやらないと思う。理由はcache機能が使えず，いちいちkiterするたびにコンパイル＆MCMCを繰り返さなければならず，非常に手間がかかるからである。あらかじめ分析結果を画像などで保存しておけばいいかもしれないが，アドホックな手続きが必要となるし，Rmdのメリットがない。
+本当はEMアルゴリズムで付随(incidental)母数を積分消去してから推定すると，速度も速く，推定結果も一致性があるため望ましい。Stanでも周辺化してから推定するコードを書くことができるようだが，それはまた今度。
 
 
 Turn to [home](index.html)
