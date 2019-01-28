@@ -39,4 +39,5 @@ Rの中だけでデータと分析が完結すれば，コピペ汚染のよう�
  - [確認的因子分析の資料（自主ゼミ用）](20190121_confirmed_factor_analysis_with_Stan)
  - [HTML ver](09_Confirmed_Factor_Analysis.html)
 
- - [irtfun2 source ver.](pakcage/irtfun2_0.6.7.1.tar.gz)
+ - [irtfun2 source ver.](irtfun2_0.6.7.1.tar.gz)
+ - [irtfun2 binary ver.](irtfun2_0.6.7.1.zip)
