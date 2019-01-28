@@ -6,6 +6,19 @@ T.SHIBUYA
 1/18/2019  
 Turn to [home](index.html)
 
+## 追記
+
+より簡単なインストール方法に変更しました。Rのコンソールに，
+
+``` r
+install.packages("https://takuizum.github.io/irtfun2_0.6.7.1.zip", repos = NULL)
+```
+
+と入力することで，コンパイル済みのバイナリデータからインストールできます。
+
+Gitに上がる方がやや早いかもしれませんが，こちらの方が安定版なので，こちらをオススメします。
+
+
 ## install irtfun2
 
 　`irtfun2`のいくつかの関数はC++で記述されています。代表的なものは`estip`や`estdist`などですが，`estip2`や`estGip`などのエンジン部分はC++で記述されています。
