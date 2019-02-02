@@ -1,31 +1,11 @@
-    knitr::opts_chunk$set(echo = TRUE, comment = NA)
-    library(tidyverse)
-    library(magrittr)
+# Workstation of takuizum
 
-    ## 
-    ## Attaching package: 'magrittr'
+20190201 Validation of irtfun2
+================
+T.SHIBUYA
+2019/2/2
+Turn to [home](index.html)
 
-    ## The following objects are masked from 'package:pracma':
-    ## 
-    ##     and, mod, or
-
-    ## The following object is masked from 'package:purrr':
-    ## 
-    ##     set_names
-
-    ## The following object is masked from 'package:tidyr':
-    ## 
-    ##     extract
-
-    library(irtfun2)
-    library(lazy.irtx)
-
-    ## 
-    ## Attaching package: 'lazy.irtx'
-
-    ## The following object is masked from 'package:pracma':
-    ## 
-    ##     Diag
 
 プログラム推定値の妥当性検証
 ============================
@@ -95,7 +75,7 @@ Estimationを使うことにします。本当であれば商用のプログラ�
     set.seed(0204)
     # grade item parameter
     for(g in 1:5){
-      
+
       if(g == 1){ # 第一学年だけ，項目数が異なる（基準となるので）
         # item parameters(exept scaling test item)
         for(j in 1:(30*2/3)){
@@ -128,16 +108,16 @@ Estimationを使うことにします。本当であれば商用のプログラ�
     al <- c("a","b","c","d","e","f","st")
     c <- 2
     for(i in c("a","b","c","d","e")){
-      
+
       num <- formatC(c(1:(30*1/3)), width = 3, flag = 0)
-      
+
       if(i =="a"){
         itemn1 <- apply(matrix(i, ncol = 1), 1, paste0, num)
         itemn2 <- apply(matrix(al[c], ncol = 1), 1, paste0, num)
         itemn3 <- apply(matrix(al[7], ncol = 1), 1, paste0, num)
         itemID <- rbind(itemn1,itemn2,itemn3)
       }  
-      
+
       if(i !="a") {
         itemn1 <- apply(matrix(i, ncol = 1), 1, paste0, num)
         itemn2 <- apply(matrix(al[c], ncol = 1), 1, paste0, num)
@@ -158,39 +138,39 @@ Estimationを使うことにします。本当であれば商用のプログラ�
       } else {
         gradeitem <- c(seq.int(g*30*1/3+1,length.out = 30*2/3), seq.int(30*2 + 1, length.out = 30*1/3))
       }
-      
+
       a <-  true_para[gradeitem, 1]
       b <-  true_para[gradeitem, 2]
-      
+
       # ability parameter
       theta <- rnorm(1000, thetaMS[g,1], thetaMS[g,2])
-      
+
       # generate response patterns exept scaling test item
-      resp <- theta %>% 
-        matrix(ncol = 1) %>% 
-        apply(1,ptheta2, a = a, b = b) %>% 
-        apply(2,resfunc2) %>% 
-        t() %>% 
-        as.data.frame() 
-      
+      resp <- theta %>%
+        matrix(ncol = 1) %>%
+        apply(1,ptheta2, a = a, b = b) %>%
+        apply(2,resfunc2) %>%
+        t() %>%
+        as.data.frame()
+
       colnames(resp) <- itemID[,g]
-      
+
       grade <- rep(g, 1000) %>% as.numeric() # グループIDはnumeric型であること。
-      
+
       ID <- apply(matrix(gradeID[g], ncol = 1), 1, paste0,
-                  formatC(c(1:1000), width = 5, flag = 0)) %>% 
+                  formatC(c(1:1000), width = 5, flag = 0)) %>%
         as.character()
-      
+
       resp <- cbind(ID, grade, resp)
-      
+
       if(g == 1) {
         RESP <- resp
       } else {
         # combine response data for concurrent calibration
         RESP %<>% dplyr::full_join(resp) %>% suppressWarnings() %>% suppressMessages()
       }
-      
-    } # end of one grade 
+
+    } # end of one grade
 
     Joining, by = c("ID", "grade", "b001", "b002", "b003", "b004", "b005", "b006", "b007", "b008", "b009", "b010", "st001", "st002", "st003", "st004", "st005", "st006", "st007", "st008", "st009", "st010")
 
@@ -1144,56 +1124,56 @@ EstimationはRからは実行できないので，あらかじめ推定して得
     The number of item is 70.
     The number of remove item is 0.
     Start calculating estimated item parameters.
-    1 times -2 Marginal Log Likelihood is 176169.181337 
-    2 times -2 Marginal Log Likelihood is 174278.158754 
-    3 times -2 Marginal Log Likelihood is 173424.074656 
-    4 times -2 Marginal Log Likelihood is 173146.400631 
-    5 times -2 Marginal Log Likelihood is 173029.479951 
-    6 times -2 Marginal Log Likelihood is 172970.561876 
-    7 times -2 Marginal Log Likelihood is 172936.383650 
-    8 times -2 Marginal Log Likelihood is 172915.077893 
-    9 times -2 Marginal Log Likelihood is 172901.258091 
-    10 times -2 Marginal Log Likelihood is 172892.040705 
-    11 times -2 Marginal Log Likelihood is 172885.743991 
-    12 times -2 Marginal Log Likelihood is 172881.340954 
-    13 times -2 Marginal Log Likelihood is 172878.187027 
-    14 times -2 Marginal Log Likelihood is 172875.870206 
-    15 times -2 Marginal Log Likelihood is 172874.123388 
-    16 times -2 Marginal Log Likelihood is 172872.771205 
-    17 times -2 Marginal Log Likelihood is 172871.697078 
-    18 times -2 Marginal Log Likelihood is 172870.822512 
-    19 times -2 Marginal Log Likelihood is 172870.093941 
-    20 times -2 Marginal Log Likelihood is 172869.474293 
-    21 times -2 Marginal Log Likelihood is 172868.937532 
-    22 times -2 Marginal Log Likelihood is 172868.465084 
-    23 times -2 Marginal Log Likelihood is 172868.043486 
+    1 times -2 Marginal Log Likelihood is 176169.181337
+    2 times -2 Marginal Log Likelihood is 174278.158754
+    3 times -2 Marginal Log Likelihood is 173424.074656
+    4 times -2 Marginal Log Likelihood is 173146.400631
+    5 times -2 Marginal Log Likelihood is 173029.479951
+    6 times -2 Marginal Log Likelihood is 172970.561876
+    7 times -2 Marginal Log Likelihood is 172936.383650
+    8 times -2 Marginal Log Likelihood is 172915.077893
+    9 times -2 Marginal Log Likelihood is 172901.258091
+    10 times -2 Marginal Log Likelihood is 172892.040705
+    11 times -2 Marginal Log Likelihood is 172885.743991
+    12 times -2 Marginal Log Likelihood is 172881.340954
+    13 times -2 Marginal Log Likelihood is 172878.187027
+    14 times -2 Marginal Log Likelihood is 172875.870206
+    15 times -2 Marginal Log Likelihood is 172874.123388
+    16 times -2 Marginal Log Likelihood is 172872.771205
+    17 times -2 Marginal Log Likelihood is 172871.697078
+    18 times -2 Marginal Log Likelihood is 172870.822512
+    19 times -2 Marginal Log Likelihood is 172870.093941
+    20 times -2 Marginal Log Likelihood is 172869.474293
+    21 times -2 Marginal Log Likelihood is 172868.937532
+    22 times -2 Marginal Log Likelihood is 172868.465084
+    23 times -2 Marginal Log Likelihood is 172868.043486
     EM algorithm has been converged.
     Total iteration time is 23
     Start calculating estimated population distribution.
-    1 times -2 Marginal Log Likelihood is 182788.248219 
-    2 times -2 Marginal Log Likelihood is 173574.637657 
-    3 times -2 Marginal Log Likelihood is 173266.175834 
-    4 times -2 Marginal Log Likelihood is 173230.800847 
-    5 times -2 Marginal Log Likelihood is 173222.613952 
-    6 times -2 Marginal Log Likelihood is 173218.964568 
-    7 times -2 Marginal Log Likelihood is 173216.620618 
-    8 times -2 Marginal Log Likelihood is 173214.883455 
-    9 times -2 Marginal Log Likelihood is 173213.511092 
+    1 times -2 Marginal Log Likelihood is 182788.248219
+    2 times -2 Marginal Log Likelihood is 173574.637657
+    3 times -2 Marginal Log Likelihood is 173266.175834
+    4 times -2 Marginal Log Likelihood is 173230.800847
+    5 times -2 Marginal Log Likelihood is 173222.613952
+    6 times -2 Marginal Log Likelihood is 173218.964568
+    7 times -2 Marginal Log Likelihood is 173216.620618
+    8 times -2 Marginal Log Likelihood is 173214.883455
+    9 times -2 Marginal Log Likelihood is 173213.511092
 
     #lazy.irtx
-    res_lazy <- lazy.irt::uIRT(RESP2, idvar = "ID",groupvar = "grade" ,type = rep("B2",ncol(RESP2)-2), 
-                               baseform = 1, estmu = 1, estsigma = 1, npoint = 31, print = 0, 
+    res_lazy <- lazy.irt::uIRT(RESP2, idvar = "ID",groupvar = "grade" ,type = rep("B2",ncol(RESP2)-2),
+                               baseform = 1, estmu = 1, estsigma = 1, npoint = 31, print = 0,
                                eps = 1e-4, epsd = 1e-5, thmin = -6, thmax = 6)
 
      iSQUAREM will be invoked with the following parameters from <environment: 0x7f84c5503190>
-       SQUAREM    =  3 
-       nSQUAREM   =  1 
-       always     =  1 
-       minalpha   =  -999 
-       maxalpha   =  -1 
-       reset1     =  0 
-       reset2     =  1 
-       bof_value  =  NULL 
+       SQUAREM    =  3
+       nSQUAREM   =  1
+       always     =  1
+       minalpha   =  -999
+       maxalpha   =  -1
+       reset1     =  0
+       reset2     =  1
+       bof_value  =  NULL
 
     # Easy Estimation
     res_easy <- read.csv("vald_dataPara.csv", skip = 1, header = F)
@@ -3146,7 +3126,7 @@ Easy との比較
 </tbody>
 </table>
 
-    diff_i_e %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>% 
+    diff_i_e %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>%
       ggplot(aes(x = para, y = Item, colour = label))+
       geom_point()+
       facet_wrap(.~type_of_para)+
@@ -3598,7 +3578,7 @@ lazy との比較
 </tbody>
 </table>
 
-    diff_i_l %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>% 
+    diff_i_l %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>%
       ggplot(aes(x = para, y = Item, colour = label))+
       geom_point()+
       facet_wrap(.~type_of_para)+
@@ -3611,8 +3591,8 @@ lazy との比較
 lazyとEasyの比較
 ----------------
 
-    adiff <- res_easy$V3 - res_lazy$param$p1 
-    bdiff <- res_easy$V4 - res_lazy$param$p2 
+    adiff <- res_easy$V3 - res_lazy$param$p1
+    bdiff <- res_easy$V4 - res_lazy$param$p2
 
     diff_l_e <- data.frame(Item = Item, label = label_grade, a = adiff, b = bdiff)
     diff_l_e %>% knitr::kable(format = "markdown")
@@ -4050,7 +4030,7 @@ lazyとEasyの比較
 </tbody>
 </table>
 
-    diff_l_e %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>% 
+    diff_l_e %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>%
       ggplot(aes(x = para, y = Item, colour = label))+
       geom_point()+
       facet_wrap(.~type_of_para)+
@@ -4502,7 +4482,7 @@ trueとirtfun2の比較
 </tbody>
 </table>
 
-    diff_i_t %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>% 
+    diff_i_t %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>%
       ggplot(aes(x = para, y = Item, colour = label))+
       geom_point()+
       facet_wrap(.~type_of_para)+
@@ -4952,7 +4932,7 @@ true とEasyの比較
 </tbody>
 </table>
 
-    diff_e_t %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>% 
+    diff_e_t %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>%
       ggplot(aes(x = para, y = Item, colour = label))+
       geom_point()+
       facet_wrap(.~type_of_para)+
@@ -5402,7 +5382,7 @@ true とlazyの比較
 </tbody>
 </table>
 
-    diff_l_t %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>% 
+    diff_l_t %>% tidyr::gather(key = type_of_para, value = para, -Item, -label) %>%
       ggplot(aes(x = para, y = Item, colour = label))+
       geom_point()+
       facet_wrap(.~type_of_para)+
@@ -5446,3 +5426,6 @@ true とlazyの比較
 <!-- |G4|1.3096390|0.8914594| -->
 <!-- |G5|1.8712678|0.7441478| -->
 <!-- 推定母集団分布も，myfuncの推定結果はEasy Estimationとlazy.irtxの推定結果と類似しており，推定プログラムは正常に機能していると言える。 -->
+
+
+Turn to [home](index.html)
