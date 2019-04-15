@@ -1,8 +1,8 @@
 # GIRT model
 ##### 2019/04/13
 ----
-### 正規累積モデル
 
+### 正規累積モデル  
 　まずは正規累積モデルから考えよう。正規累積モデル(Normal Ogive Model, NOM)は正規累積関数を $\Phi$ とおくと，
 $$
 \Phi(z)=1/\sqrt{2\pi}\int_{-\infty}^L\exp(z)
