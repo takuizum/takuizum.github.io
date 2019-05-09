@@ -1,9 +1,22 @@
 # Missing Data in IRT
 
-Finch (2008) Estimation of Item Response Theory Parameters in the Presence of Missing Data. Journal of Educational Measurement, 45(3), 225-245.  
+### 欠測値についての基本的な知識
 
+- MCAR ... Missing Completely At Random  
+  - 完全にランダムに欠測が発生している場合。このケースでは欠測の指標 (missing indicator) が観測値および欠測値に依存していないため，とくに欠測値の解析をおこなわなくてもよいことが多い。分析は観測できたデータだけを用いる完全ケース分析でよい。
+- MAR ... Missing At Random  
+  - 欠測の分布が観測値に条件付けられた分布である場合。より厳密には，欠測の指標が欠測値自身とそれ以外の観測されていない変数に依存していない場合，である。欠測の原因が観測データのどこかに存在しているため，欠測メカニズムが同定可能である，ということか。それ故，MARの部分集合はMARとはならない。
+- NI(MNAR) ... Nonignorable (Missing Not At Random)
+  - 欠測データのメカニズムが欠測値に依存している場合。
 
-<span>　</span>
+　基本的にIRTの枠組みでは以下の条件下であれば欠測をMCARとみなすことができる。
+- 項目パラメタ同士が関連していない。
+- 潜在変数同士が関連していない。
+- その他のいかなる変数も関連していない。
+しかし，ある項目への欠測が，たとえば特定の受検者の特性に依存していたり，他の項目の回答に依存している場合，MARとみなすべきである。
+
+#### Finch (2008). Estimation of Item Response Theory Parameters in the Presence of Missing Data. Journal of Educational Measurement, 45(3), 225-245.  
+
 基本的には欠測値の代入方法は大きく分けて5つ
 
 1. 項目平均と受検者得点の平均から Corrected Item mean Substitution(CM) を計算して代入する。
@@ -18,3 +31,21 @@ Finch (2008) Estimation of Item Response Theory Parameters in the Presence of Mi
 Lordは1970年代くらいから欠測値の研究に着手していて，当初から，MissingをIN(Incorrect)と扱ってはいけないと主張していた（de ayalaで読んだ気がする）。  
 　Bernaards & Sijtsma (1999) の研究によれば，CMによる代入は，ランダム補完，平均補完，リストワイズ法のいずれの方法よりも優れた結果を出している。さらにBernaards & Sijtsma (2000) はCMをEMアルゴリズムによる代入を比較して，リッカートタイプのデータに対してはEMが最適な手法であるが，CMは簡便な方法として完全にNOとはされていない（そこまで性能が悪くなかったのかな？）。  
 　Huisman and Molenaar (2001) はHot Deck，CM，Mokken Scaling（ノンパラの一種）と1PLMによるモデルベースの代入などを比較した結果，1PLMにもとづくモデルベース代入がもっとも優れた結果でくぁり，CMやノンパラ手法はわずかに性能が悪く，CMは最も低い性能であったと述べている。
+
+#### Porcu, M. (2017). Handling Missing Data in Item Response Theory. Assessing the Accuracy of a Multiple Imputation Procedure Based on Latent Class Analysis. Journal of Classification, 34, 327-359.
+
+　この論文はモデルベース多重代入法を提案している。つまり潜在クラス分析 (Latent Class Analysis, LCA) の結果を多重代入する手法である。  
+　この方法を用いるメリットとして，推定値を得る過程と欠測値を代入する過程を別々に（アドホックに）おこなうことができるということが挙げられる。たとえば決定的な (deterministic) 代入法として他の項目や受検者の反応データをドナーとして重み付け関数を利用して代入する方法があるが，これは単純な平均値代入やリストワイズ，hot-deck法などよりも，良い結果を与えてくれるようだ。  
+　多重代入法が優れている点はM個の推算値 (plausible values) を利用することで欠測値＝未知の値の不確実さ (uncertainty) を推定することができる点である。推算値によって得られた推定値の平均は，そのまま算術平均を用いれば良く，分散は群間分散と郡内分散と同様に分解される式を利用して，計算する。多重代入法の代表的なものとして多変量正規分布に基づく多変量代入 (MI) や連鎖方程式による多重代入 (MICE)，確率的回帰代入法 (SRI)，そしてこの論文で注目する潜在クラス分析に基づく多重代入法 (MILCA) である。MIアプローチは連続変数の分布を仮定し，適当にラウンディングするわけだが，順序データに当てはめるとパフォーマンスが落ちるらしい。そんなときにMILCAが使えるそうな。Porcuが挙げている先行研究によればカテゴリカルデータ & MAR下ではSIRやMICEの性能もそこそこ良いらしい。  
+##### MILCAアルゴリズム
+　まずMILCAを用いるメリットを列挙する。
+1. 受検者の反応が多項分布に従うとみなす
+2. 項目間の高次の交絡も特定できる
+3. どんなパターンの欠測にも使える
+4. 深刻な欠測度合いであっても推定できる
+5. 複数の推算値をドローすることで不確実性も考慮できる。
+
+　MILCAを理解するためにはまずはLCA，潜在クラス分析を理解する必要があるだろう。潜在クラス分析は多変量解析の一種であり，IRTが潜在変数に連続量を仮定するのに対して，離散量の潜在変数を仮定している。ただし，その離散量は順序尺度ではない。受検者は項目反応データに基づいて有限の潜在クラスに分類される。各潜在クラスに所属する確率を潜在クラスメンバーシップ確率 ($p_r$) と呼ぶ。そして潜在クラスが条件付けられたときに項目反応確率を $\pi_{rjk}$ とおく。もちろん，ここでは $j$ は項目を， $k$ はカテゴリを表している。 $r$ は潜在クラスである。最後に受検者の項目反応を $y_{ijk}$ とおくと，項目反応データの条件付き確率は，
+$$
+P(\bf y_i | p, \Pi) = \it \sum_{r=1}^{R}p_r\prod_{j=1}^J\prod_{k=1}^K\pi_{rjk}^{y_{ijk}}
+$$
