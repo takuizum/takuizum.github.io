@@ -26,7 +26,7 @@ H_{z_g}(\theta) &=& \lim_{\theta \to \infty}\frac{P^\ast_{z_g}(\theta)-P^\ast_{z
 &=&a_g \psi_g\{a_g(\theta - b_g)\}\frac{d}{dz_g}b_{z_g}
 \end{eqnarray}
 $$
-となる。なお $\theta$が大きくなるほど，正答確率は限りなく１に近づく。上記のように，微小区間デルタの確率をスコア$z_g$に対するoperating density characteristicとよぶ。$H_{z_g}(\theta)$ は$z_g$の区間$0 \le z_g \le 1$ で積分すると１になる。かつ，
+となる。なお $\theta$が大きくなるほど，正答確率は限りなく１に近づく。上記のように，微小区間デルタの確率をスコア$z_g$に対するoperating density characteristicとよぶ。この確率密度は，いわばGRMにおけるICCをある $\theta$ 一点で切断したときの，断各カテゴリの断面図を示していると考えることができる。 $H_{z_g}(\theta)$ は$z_g$の区間$0 \le z_g \le 1$ で積分すると１になる。かつ，
 $$
 \begin{eqnarray}
 \left\{
@@ -53,7 +53,22 @@ $$
 2. すべての $z_g$ において偏微分が0にならない，
 3. $z_g$ が有限であるのに対し， $b_{z_g}$ は無限なので，二者の関係は線形ではない，
 
-というような条件を述べている。
+というような条件を述べている。  
+
+　CRMにおける情報量は，基本的にGRMにおける情報量の導出と同じである。まず $\theta$ を固定したときの，カテゴリ $z_g$ における情報量の期待値を，その項目の情報量であると考える。すなわち，
+$$
+I_{z_g}(\theta) = -\frac{\partial^2}{\partial\theta^2}\left[ \ln{H_{z_g}(\theta)}\right]
+$$
+であるとき，
+$$
+\begin{eqnarray}
+I_g(\theta) &=& E\left[I_{z_g}(\theta)\right]\\
+ &=& \int_0^1 I_{z_g}H_{z_g}dz_g\\
+ &&[置換積分]
+ &=& \int_{-\infty}^{\infty}I_{z_g}a_g\psi_g{a_g(\theta - b_{z_g})}db_{z_g}
+\end{eqnarray}
+$$
+と計算される。
 
 #### 段階反応モデルとの関連
 　段階反応モデル(GRM)がカテゴリごとの反応曲線のパラメタを推定しようとしているのに対し，CRMはパラメタを推定するための関数のパラメタを推定している。この点で二者は異なるが，CRMの考え方を応用して，GRMにおいてカテゴリ数が増えすぎた際に観測されないカテゴリが生じるという問題に，一つの対処法を考えることができる。  
