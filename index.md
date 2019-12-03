@@ -35,6 +35,7 @@ Julia Advent Calender 2019の2日目に投稿しました👀。[HERE](https://q
 IRTは有益なモデルですが，分析可能なソフトが比較的限定されています。2013~2015年くらいまでは市販のソフトウェアでなければまともにIRT分析をすることはできませんでしたが，最近では[Easy Estimation](http://irtanalysis.main.jp/) や [Exametrika](http://antlers.rd.dnc.ac.jp/~shojima/exmk/jindex.htm), [HAD](http://norimune.net/had) などを使用して手軽に，GUIで簡単に分析をすることができるようになりました。それ以前は海外の研究者が作ったプログラムを使用するしかありませんでした。
 
 近年では統計分析をRでおこなうことも増えてきており，当然IRTを分析するパッケージも充実しています。中には多次元IRTなどのより発展的なモデルを分析できるものを実装されており，私も情報が追いついていません。RでIRT分析を行いたいのであれば，`ltm`や`irtoys`，`mirt`パッケージなどが便利なようです。もちろん，ごく一部のモデルしかまだ対応していませんが，`irtfun2`でも分析できます！！
+
 <!---
 しかし，Rで分析可能なIRT用のパッケージの多くは推定速度が遅かったり，高速化できてもアウトプットの情報が乏しかったりするため，満足に研究や分析に用いることが難しいです。そのため今でも研究や実務では市販のソフトウェア（例えばIRT PRO）が使用されます。
 
@@ -48,14 +49,20 @@ Rの中だけでデータと分析が完結すれば，コピペ汚染のよう�
 - [Notes/](Notes/generalized-linear-mixed-model.md)
 
 ---
-自作パッケージ周りの資料   
+
+自作パッケージ周りの資料  
+
  - [irtfun2の使い方](20190118_introduction_to_irtfun2)
  - [irtfun2のインストール方法](20180118_install_irtfun2)
  - [irtfun2の妥当性検証](20190107_validation_irtfun2)
+
 ---
+
 院生時代の資料  
+
  - [確認的因子分析の資料（自主ゼミ用）](20190121_confirmed_factor_analysis_with_Stan)
  - [HTML ver](09_Confirmed_Factor_Analysis.html)
+
 
 <!---
 # Deprecated due to old version
