@@ -1,0 +1,11 @@
+- title: "研究コンサルティング"
+  description: "統計解析、データサイエンス、機械学習に関する研究サポートを提供します。"
+  icon: "fas fa-microscope"
+
+- title: "システム開発"
+  description: "R、Python、JavaScriptを使用したデータ分析システムやWebアプリケーションの開発。"
+  icon: "fas fa-code"
+
+- title: "教育・研修"
+  description: "統計学やプログラミングに関する教育プログラムの設計と実施。"
+  icon: "fas fa-graduation-cap"

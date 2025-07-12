@@ -1,0 +1,45 @@
+{
+  "name": "takuizum-github-io",
+  "version": "1.0.0",
+  "description": "Personal website for research and business",
+  "main": "index.js",
+  "scripts": {
+    "start": "bundle exec jekyll serve --watch --incremental",
+    "build": "bundle exec jekyll build",
+    "dev": "bundle exec jekyll serve --drafts --watch --incremental",
+    "clean": "bundle exec jekyll clean",
+    "lint:css": "stylelint '_sass/**/*.scss'",
+    "lint:js": "eslint assets/js/**/*.js",
+    "lint": "npm run lint:css && npm run lint:js",
+    "test": "bundle exec htmlproofer ./_site --disable-external",
+    "deploy": "npm run build && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takuizum/takuizum.github.io.git"
+  },
+  "keywords": [
+    "jekyll",
+    "github-pages",
+    "statistics",
+    "data-science",
+    "research"
+  ],
+  "author": "takuizum",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takuizum/takuizum.github.io/issues"
+  },
+  "homepage": "https://takuizum.github.io",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "stylelint": "^15.0.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "html-proofer": "^3.19.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

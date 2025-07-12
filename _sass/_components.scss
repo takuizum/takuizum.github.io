@@ -1,0 +1,160 @@
+// 再利用可能なコンポーネント
+
+// ボタン
+.btn {
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: $border-radius-sm;
+  font-weight: 500;
+  transition: all $transition-fast;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  
+  &.btn-primary {
+    background: $primary-color;
+    color: $white;
+    
+    &:hover {
+      background: $secondary-color;
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.btn-secondary {
+    background: transparent;
+    color: $white;
+    border: 2px solid $white;
+    
+    &:hover {
+      background: $white;
+      color: $primary-color;
+    }
+  }
+}
+
+// カード
+.card {
+  background: $white;
+  padding: $spacing-xl;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md;
+  transition: transform $transition-fast;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// セクションタイトル
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: $spacing-xxl;
+  color: $gray-dark;
+  font-weight: 700;
+}
+
+// タグ
+.tag {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  display: inline-block;
+  margin: 0.2rem;
+  transition: all $transition-fast;
+  cursor: pointer;
+  
+  &:hover {
+    background: #1976d2;
+    color: $white;
+  }
+}
+
+// フォーム要素
+.form-group {
+  margin-bottom: $spacing-lg;
+  
+  label {
+    display: block;
+    margin-bottom: $spacing-sm;
+    font-weight: 500;
+    color: $text-color;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $gray-medium;
+    border-radius: $border-radius-sm;
+    font-family: inherit;
+    transition: border-color $transition-fast;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+// グリッドシステム
+.grid {
+  display: grid;
+  gap: $spacing-xl;
+  
+  &.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  &.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  &.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+// スペーサー
+.spacer {
+  &.xs { height: $spacing-xs; }
+  &.sm { height: $spacing-sm; }
+  &.md { height: $spacing-md; }
+  &.lg { height: $spacing-lg; }
+  &.xl { height: $spacing-xl; }
+  &.xxl { height: $spacing-xxl; }
+}
+
+// アニメーション
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}

@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<div class="home">
+  {% if page.hero %}
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">{{ page.hero.title }}</h1>
+        <p class="hero-description">{{ page.hero.description }}</p>
+        <div class="hero-buttons">
+          {% for button in page.hero.buttons %}
+          <a href="{{ button.url | relative_url }}" class="btn {{ button.class }}">{{ button.text }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-placeholder">
+          <i class="fas fa-chart-line"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {{ content }}
+
+  {% if page.show_updates %}
+  <section class="updates">
+    <div class="container">
+      <h2 class="section-title">最新の更新</h2>
+      <div class="updates-grid">
+        {% for update in site.data.updates limit:5 %}
+        <div class="update-card">
+          <div class="update-date">{{ update.date | date: "%Y年%m月%d日" }}</div>
+          <h3 class="update-title">{{ update.title }}</h3>
+          <p class="update-description">{{ update.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.show_services %}
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">提供サービス</h2>
+      <div class="services-grid">
+        {% for service in site.data.services %}
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="{{ service.icon }}"></i>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.show_contact %}
+  {% include contact-form.html %}
+  {% endif %}
+</div>

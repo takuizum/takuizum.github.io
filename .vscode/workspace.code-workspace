@@ -1,0 +1,174 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.md": "markdown",
+      "*.yml": "yaml",
+      "*.yaml": "yaml",
+      "*.liquid": "liquid",
+      "*.scss": "scss"
+    },
+    "files.exclude": {
+      "_site/**": true,
+      ".sass-cache/**": true,
+      ".jekyll-cache/**": true,
+      ".jekyll-metadata": true,
+      "node_modules/**": true,
+      ".bundle/**": true,
+      "vendor/**": true
+    },
+    "search.exclude": {
+      "_site/**": true,
+      ".sass-cache/**": true,
+      ".jekyll-cache/**": true,
+      "node_modules/**": true,
+      ".bundle/**": true,
+      "vendor/**": true
+    },
+    "emmet.includeLanguages": {
+      "liquid": "html",
+      "markdown": "html"
+    },
+    "liquid.format.enable": true,
+    "markdown.validate.enabled": true,
+    "markdown.preview.breaks": true,
+    "scss.validate": true,
+    "css.validate": true,
+    "javascript.validate.enable": true,
+    "eslint.validate": ["javascript", "typescript"],
+    "stylelint.validate": ["css", "scss"],
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.stylelint": "explicit"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.vscode-json",
+      "redhat.vscode-yaml",
+      "sissel.shopify-liquid",
+      "bradlc.vscode-tailwindcss",
+      "stylelint.vscode-stylelint",
+      "dbaeumer.vscode-eslint",
+      "ms-vscode.vscode-typescript-next",
+      "yzhang.markdown-all-in-one",
+      "shd101wyy.markdown-preview-enhanced",
+      "davidanson.vscode-markdownlint",
+      "formulahendry.auto-rename-tag",
+      "ms-vscode.live-server",
+      "ritwickdey.liveserver",
+      "ms-vscode-remote.remote-wsl",
+      "ms-vscode.powershell",
+      "ruby-lsp.ruby-lsp",
+      "castwide.solargraph"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Jekyll: Serve",
+        "type": "shell",
+        "command": "bundle",
+        "args": ["exec", "jekyll", "serve", "--livereload", "--incremental"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "isBackground": true,
+        "problemMatcher": {
+          "pattern": {
+            "regexp": "^.*$",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "^.*Auto-regeneration: enabled.*$",
+            "endsPattern": "^.*Server running.*$"
+          }
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "new"
+        },
+        "options": {
+          "cwd": "${workspaceFolder}"
+        }
+      },
+      {
+        "label": "Jekyll: Build",
+        "type": "shell",
+        "command": "bundle",
+        "args": ["exec", "jekyll", "build"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Jekyll: Clean",
+        "type": "shell",
+        "command": "bundle",
+        "args": ["exec", "jekyll", "clean"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "npm: Install",
+        "type": "shell",
+        "command": "npm",
+        "args": ["install"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Bundle: Install",
+        "type": "shell",
+        "command": "bundle",
+        "args": ["install"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Lint: All",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "lint"],
+        "group": "test",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      }
+    ]
+  }
+}

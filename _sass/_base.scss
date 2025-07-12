@@ -1,0 +1,72 @@
+// リセットCSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 基本設定
+body {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $background-color;
+  font-size: $font-size-base;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: $spacing-md;
+}
+
+h1 { font-size: $font-size-hero; }
+h2 { font-size: $font-size-xxl; }
+h3 { font-size: $font-size-xl; }
+h4 { font-size: $font-size-lg; }
+
+p {
+  margin-bottom: $spacing-md;
+  line-height: $line-height-base;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+ul, ol {
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-xl;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// ユーティリティクラス
+.container {
+  max-width: $breakpoint-large;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }

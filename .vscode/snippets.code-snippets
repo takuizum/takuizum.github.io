@@ -1,0 +1,111 @@
+{
+  // Jekyll用のスニペット集
+  "Jekyll Post": {
+    "prefix": "jekyll-post",
+    "body": [
+      "---",
+      "layout: post",
+      "title: \"${1:Post Title}\"",
+      "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "categories: [${2:category}]",
+      "tags: [${3:tag1, tag2}]",
+      "excerpt: \"${4:Post excerpt}\"",
+      "---",
+      "",
+      "${5:Post content here...}"
+    ],
+    "description": "新しいJekyll投稿のテンプレート"
+  },
+  
+  "Jekyll Publication": {
+    "prefix": "jekyll-publication",
+    "body": [
+      "---",
+      "title: \"${1:Publication Title}\"",
+      "authors: \"${2:Author Names}\"",
+      "journal: \"${3:Journal Name}\"",
+      "year: ${4:2024}",
+      "volume: \"${5:Volume}\"",
+      "pages: \"${6:Page Range}\"",
+      "doi: \"${7:DOI}\"",
+      "pdf_url: \"${8:/assets/pdf/publication.pdf}\"",
+      "abstract: |",
+      "  ${9:Abstract text here...}",
+      "tags: [${10:research, publication}]",
+      "---",
+      "",
+      "${11:Additional content...}"
+    ],
+    "description": "新しい論文のテンプレート"
+  },
+  
+  "Jekyll Page": {
+    "prefix": "jekyll-page",
+    "body": [
+      "---",
+      "layout: page",
+      "title: \"${1:Page Title}\"",
+      "permalink: /${2:page-url}/",
+      "---",
+      "",
+      "${3:Page content here...}"
+    ],
+    "description": "新しいJekyllページのテンプレート"
+  },
+  
+  "Liquid Include": {
+    "prefix": "liquid-include",
+    "body": [
+      "{% include ${1:filename}.html ${2:param=\"value\"} %}"
+    ],
+    "description": "Liquid includeタグ"
+  },
+  
+  "Liquid For Loop": {
+    "prefix": "liquid-for",
+    "body": [
+      "{% for ${1:item} in ${2:collection} %}",
+      "  ${3:content}",
+      "{% endfor %}"
+    ],
+    "description": "Liquid forループ"
+  },
+  
+  "Liquid If Statement": {
+    "prefix": "liquid-if",
+    "body": [
+      "{% if ${1:condition} %}",
+      "  ${2:content}",
+      "{% endif %}"
+    ],
+    "description": "Liquid if文"
+  },
+  
+  "SCSS Mixin": {
+    "prefix": "scss-mixin",
+    "body": [
+      "@mixin ${1:mixin-name}(${2:$param}) {",
+      "  ${3:// スタイル定義}",
+      "}"
+    ],
+    "description": "SCSSミックスイン"
+  },
+  
+  "SCSS Variable": {
+    "prefix": "scss-var",
+    "body": [
+      "$${1:variable-name}: ${2:value};"
+    ],
+    "description": "SCSS変数"
+  },
+  
+  "Responsive Breakpoint": {
+    "prefix": "responsive",
+    "body": [
+      "@media (min-width: ${1:768px}) {",
+      "  ${2:// スタイル定義}",
+      "}"
+    ],
+    "description": "レスポンシブデザイン用メディアクエリ"
+  }
+}

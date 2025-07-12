@@ -1,0 +1,41 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>{{ site.title }}</h3>
+        <p>{{ site.description }}</p>
+      </div>
+      <div class="footer-section">
+        <h4>リンク</h4>
+        <ul>
+          {% for nav in site.navigation %}
+          <li><a href="{{ nav.url | relative_url }}">{{ nav.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>SNS</h4>
+        <div class="social-links">
+          {% if site.social.github %}
+          <a href="https://github.com/{{ site.social.github }}" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          {% endif %}
+          {% if site.social.twitter %}
+          <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          {% endif %}
+          {% if site.social.linkedin %}
+          <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

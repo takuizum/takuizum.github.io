@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Jekyll Serve (Debug)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jekyll",
+      "args": ["serve", "--host", "localhost", "--port", "4000", "--incremental", "--livereload"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "JEKYLL_ENV": "development"
+      }
+    },
+    {
+      "name": "Bundle Install",
+      "type": "node",
+      "request": "launch",
+      "program": "bundle",
+      "args": ["install"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Build Jekyll Site",
+      "type": "node",
+      "request": "launch",
+      "program": "bundle",
+      "args": ["exec", "jekyll", "build"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "JEKYLL_ENV": "production"
+      }
+    }
+  ]
+}
