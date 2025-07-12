@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出版・論文 - takuizum</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: inherit;">takuizum</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-link">自己紹介</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="publications.html" class="nav-link active">出版・論文</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">ブログ</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 70px;">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">出版・論文</h1>
+                <p class="page-description">
+                    研究成果として発表した論文、書籍、ソフトウェアパッケージなどをご紹介します。
+                </p>
+            </div>
+        </section>
+
+        <section class="publications-content">
+            <div class="container">
+                <div class="publications-nav">
+                    <button class="filter-btn active" data-filter="all">すべて</button>
+                    <button class="filter-btn" data-filter="journal">査読付き論文</button>
+                    <button class="filter-btn" data-filter="conference">学会発表</button>
+                    <button class="filter-btn" data-filter="book">書籍</button>
+                    <button class="filter-btn" data-filter="software">ソフトウェア</button>
+                </div>
+
+                <div class="publications-grid" id="publications-grid">
+                    <!-- 査読付き論文 -->
+                    <div class="publication-card" data-category="journal">
+                        <div class="publication-header">
+                            <span class="publication-type journal">査読付き論文</span>
+                            <span class="publication-year">2025</span>
+                        </div>
+                        <h3 class="publication-title">
+                            Advanced Item Response Theory Models for Educational Assessment
+                        </h3>
+                        <div class="publication-authors">
+                            <strong>Takuizum</strong>, A. Smith, B. Johnson
+                        </div>
+                        <div class="publication-journal">
+                            Journal of Educational Measurement, 62(3), 245-267
+                        </div>
+                        <p class="publication-abstract">
+                            本研究では、教育測定における項目反応理論の新しいモデルを提案し、従来の手法と比較してより精度の高い能力推定が可能であることを示した。
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                            <a href="#" class="pub-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-card" data-category="journal">
+                        <div class="publication-header">
+                            <span class="publication-type journal">査読付き論文</span>
+                            <span class="publication-year">2024</span>
+                        </div>
+                        <h3 class="publication-title">
+                            Bayesian Approaches to Cognitive Diagnostic Modeling
+                        </h3>
+                        <div class="publication-authors">
+                            <strong>Takuizum</strong>, C. Davis
+                        </div>
+                        <div class="publication-journal">
+                            Psychometrika, 89(4), 1123-1145
+                        </div>
+                        <p class="publication-abstract">
+                            認知診断モデルにベイズ統計学のアプローチを適用し、学習者の認知状態をより詳細に分析する手法を開発した。
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                        </div>
+                    </div>
+
+                    <!-- 学会発表 -->
+                    <div class="publication-card" data-category="conference">
+                        <div class="publication-header">
+                            <span class="publication-type conference">学会発表</span>
+                            <span class="publication-year">2025</span>
+                        </div>
+                        <h3 class="publication-title">
+                            Machine Learning Applications in Psychometric Assessment
+                        </h3>
+                        <div class="publication-authors">
+                            <strong>Takuizum</strong>
+                        </div>
+                        <div class="publication-journal">
+                            International Conference on Statistical Methods (ICSM 2025), Tokyo, Japan
+                        </div>
+                        <p class="publication-abstract">
+                            心理測定評価における機械学習手法の応用について、最新の研究成果を発表した。
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link"><i class="fas fa-presentation"></i> Slides</a>
+                            <a href="#" class="pub-link"><i class="fab fa-youtube"></i> Video</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-card" data-category="conference">
+                        <div class="publication-header">
+                            <span class="publication-type conference">学会発表</span>
+                            <span class="publication-year">2024</span>
+                        </div>
+                        <h3 class="publication-title">
+                            新しい項目反応理論モデルの提案と評価
+                        </h3>
+                        <div class="publication-authors">
+                            <strong>Takuizum</strong>, 田中太郎
+                        </div>
+                        <div class="publication-journal">
+                            日本心理学会第88回大会, 大阪
+                        </div>
+                        <p class="publication-abstract">
+                            多次元項目反応理論に基づく新しいモデルを提案し、実データでの検証結果を報告した。
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link"><i class="fas fa-presentation"></i> 発表資料</a>
+                        </div>
+                    </div>
+
+                    <!-- 書籍 -->
+                    <div class="publication-card" data-category="book">
+                        <div class="publication-header">
+                            <span class="publication-type book">書籍</span>
+                            <span class="publication-year">2024</span>
+                        </div>
+                        <h3 class="publication-title">
+                            Rによる項目反応理論入門：理論から実践まで
+                        </h3>
+                        <div class="publication-authors">
+                            <strong>Takuizum</strong>
+                        </div>
+                        <div class="publication-journal">
+                            ○○出版社, 320ページ
+                        </div>
+                        <p class="publication-abstract">
+                            項目反応理論の基礎から応用まで、Rを使った実践的な解説書。初学者から上級者まで対応した包括的な内容。
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link"><i class="fas fa-shopping-cart"></i> 購入</a>
+                            <a href="#" class="pub-link"><i class="fab fa-github"></i> サンプルコード</a>
+                        </div>
+                    </div>
+
+                    <!-- ソフトウェア -->
+                    <div class="publication-card" data-category="software">
+                        <div class="publication-header">
+                            <span class="publication-type software">Rパッケージ</span>
+                            <span class="publication-year">2025</span>
+                        </div>
+                        <h3 class="publication-title">
+                            irttools: Advanced Item Response Theory Analysis
+                        </h3>
+                        <div class="publication-authors">
+                            <strong>Takuizum</strong>
+                        </div>
+                        <div class="publication-journal">
+                            CRAN - R Package Repository
+                        </div>
+                        <p class="publication-abstract">
+                            項目反応理論の高度な分析を簡単に実行できるRパッケージ。多次元IRT、認知診断モデルなどに対応。
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link"><i class="fab fa-r-project"></i> CRAN</a>
+                            <a href="#" class="pub-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="pub-link"><i class="fas fa-book"></i> Documentation</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-card" data-category="software">
+                        <div class="publication-header">
+                            <span class="publication-type software">Pythonライブラリ</span>
+                            <span class="publication-year">2024</span>
+                        </div>
+                        <h3 class="publication-title">
+                            psychometrics-ml: Machine Learning for Psychometrics
+                        </h3>
+                        <div class="publication-authors">
+                            <strong>Takuizum</strong>
+                        </div>
+                        <div class="publication-journal">
+                            PyPI - Python Package Index
+                        </div>
+                        <p class="publication-abstract">
+                            心理測定学に機械学習手法を適用するためのPythonライブラリ。深層学習ベースの項目反応理論モデルを実装。
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link"><i class="fab fa-python"></i> PyPI</a>
+                            <a href="#" class="pub-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="pub-link"><i class="fas fa-book"></i> Docs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h2 class="section-title">研究実績統計</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">査読付き論文</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">学会発表</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">出版書籍</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">ソフトウェア</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">引用数</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">研究助成</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>takuizum</h3>
+                    <p>研究とソリューション開発を通じて価値を創出</p>
+                </div>
+                <div class="footer-section">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="profile.html">自己紹介</a></li>
+                        <li><a href="publications.html">出版・論文</a></li>
+                        <li><a href="blog.html">ブログ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>SNS</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/takuizum" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 takuizum. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="publications.js"></script>
+</body>
+</html>
