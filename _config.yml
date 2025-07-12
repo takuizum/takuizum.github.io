@@ -1,12 +1,15 @@
 # Site settings
 title: takuizum
-subtitle: 研究・ソリューション
+tagline: データサイエンス・心理測定学・統計分析
 description: >-
   データサイエンス、統計学、プログラミングの分野で研究・開発に従事。
   学術研究から実践的なソリューション開発まで幅広く取り組んでいます。
 
 url: "https://takuizum.github.io"
 baseurl: ""
+
+# Cayman Blog Theme specific settings
+header_page_ref: home
 
 # Author settings
 author:
@@ -21,7 +24,7 @@ author:
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+theme: jekyll-theme-cayman-blog
 
 # Plugins
 plugins:

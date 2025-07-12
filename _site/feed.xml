@@ -1,125 +1,145 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ja" /><updated>2025-07-13T00:50:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">takuizum</title><subtitle>データサイエンス、統計学、プログラミングの分野で研究・開発に従事。 学術研究から実践的なソリューション開発まで幅広く取り組んでいます。</subtitle><author><name>takuizum</name><email>your.email@example.com</email></author><entry><title type="html">ベイズ統計学入門：MCMCから実践まで</title><link href="http://localhost:4000/blog/2025/07/10/bayesian-statistics-intro/" rel="alternate" type="text/html" title="ベイズ統計学入門：MCMCから実践まで" /><published>2025-07-10T00:00:00+09:00</published><updated>2025-07-10T00:00:00+09:00</updated><id>http://localhost:4000/blog/2025/07/10/bayesian-statistics-intro</id><content type="html" xml:base="http://localhost:4000/blog/2025/07/10/bayesian-statistics-intro/"><![CDATA[## はじめに
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ja" /><updated>2025-07-13T01:45:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">takuizum</title><subtitle>データサイエンス、統計学、プログラミングの分野で研究・開発に従事。 学術研究から実践的なソリューション開発まで幅広く取り組んでいます。</subtitle><author><name>takuizum</name><email>your.email@example.com</email></author><entry><title type="html">ベイズ統計学入門：MCMCから実践まで</title><link href="http://localhost:4000/blog/2025/07/10/bayesian-statistics-intro/" rel="alternate" type="text/html" title="ベイズ統計学入門：MCMCから実践まで" /><published>2025-07-10T00:00:00+09:00</published><updated>2025-07-10T00:00:00+09:00</updated><id>http://localhost:4000/blog/2025/07/10/bayesian-statistics-intro</id><content type="html" xml:base="http://localhost:4000/blog/2025/07/10/bayesian-statistics-intro/"><![CDATA[<h2 id="はじめに">はじめに</h2>
 
-ベイズ統計学は、従来の頻度主義統計学とは異なるアプローチで統計的推論を行う手法です。近年、機械学習やデータサイエンスの分野で注目が高まっており、不確実性を適切に扱える強力なツールとして活用されています。
+<p>ベイズ統計学は、従来の頻度主義統計学とは異なるアプローチで統計的推論を行う手法です。近年、機械学習やデータサイエンスの分野で注目が高まっており、不確実性を適切に扱える強力なツールとして活用されています。</p>
 
-## ベイズの定理
+<h2 id="ベイズの定理">ベイズの定理</h2>
 
-ベイズ統計学の基礎となるのは、18世紀の数学者トーマス・ベイズにちなんで名付けられたベイズの定理です。
+<p>ベイズ統計学の基礎となるのは、18世紀の数学者トーマス・ベイズにちなんで名付けられたベイズの定理です。</p>
 
-$$P(\theta|D) = \frac{P(D|\theta)P(\theta)}{P(D)}$$
+\[P(\theta|D) = \frac{P(D|\theta)P(\theta)}{P(D)}\]
 
-ここで：
-- $P(\theta|D)$: 事後分布（データを観測した後のパラメータの分布）
-- $P(D|\theta)$: 尤度関数（パラメータが与えられたときのデータの確率）
-- $P(\theta)$: 事前分布（データを観測する前のパラメータの分布）
-- $P(D)$: 周辺尤度（正規化定数）
+<p>ここで：</p>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$P(\theta</td>
+          <td>D)$: 事後分布（データを観測した後のパラメータの分布）</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$P(D</td>
+          <td>\theta)$: 尤度関数（パラメータが与えられたときのデータの確率）</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>$P(\theta)$: 事前分布（データを観測する前のパラメータの分布）</li>
+  <li>$P(D)$: 周辺尤度（正規化定数）</li>
+</ul>
 
-## MCMCサンプリング
+<h2 id="mcmcサンプリング">MCMCサンプリング</h2>
 
-複雑なベイズモデルでは、事後分布を解析的に求めることが困難な場合が多く、マルコフ連鎖モンテカルロ（MCMC）サンプリングが用いられます。
+<p>複雑なベイズモデルでは、事後分布を解析的に求めることが困難な場合が多く、マルコフ連鎖モンテカルロ（MCMC）サンプリングが用いられます。</p>
 
-### Stanを使った実装例
+<h3 id="stanを使った実装例">Stanを使った実装例</h3>
 
-```r
-library(rstan)
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">rstan</span><span class="p">)</span><span class="w">
 
-# モデルの定義
-model_code <- "
+</span><span class="c1"># モデルの定義</span><span class="w">
+</span><span class="n">model_code</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"
 data {
-  int<lower=0> N;
+  int&lt;lower=0&gt; N;
   vector[N] y;
 }
 parameters {
   real mu;
-  real<lower=0> sigma;
+  real&lt;lower=0&gt; sigma;
 }
 model {
   mu ~ normal(0, 10);
   sigma ~ exponential(1);
   y ~ normal(mu, sigma);
 }
-"
+"</span><span class="w">
 
-# データの準備
-data_list <- list(
-  N = length(y),
-  y = y
-)
+</span><span class="c1"># データの準備</span><span class="w">
+</span><span class="n">data_list</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="w">
+  </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w">
+  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w">
+</span><span class="p">)</span><span class="w">
 
-# モデルの実行
-fit <- stan(model_code = model_code, data = data_list, chains = 4, iter = 2000)
-```
+</span><span class="c1"># モデルの実行</span><span class="w">
+</span><span class="n">fit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">stan</span><span class="p">(</span><span class="n">model_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">model_code</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data_list</span><span class="p">,</span><span class="w"> </span><span class="n">chains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2000</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
 
-## 実践的な応用例
+<h2 id="実践的な応用例">実践的な応用例</h2>
 
-ベイズ統計学は以下のような分野で活用されています：
+<p>ベイズ統計学は以下のような分野で活用されています：</p>
 
-1. **A/Bテストの分析**
-2. **機械学習モデルの不確実性定量化**
-3. **時系列予測**
-4. **画像認識と自然言語処理**
+<ol>
+  <li><strong>A/Bテストの分析</strong></li>
+  <li><strong>機械学習モデルの不確実性定量化</strong></li>
+  <li><strong>時系列予測</strong></li>
+  <li><strong>画像認識と自然言語処理</strong></li>
+</ol>
 
-## まとめ
+<h2 id="まとめ">まとめ</h2>
 
-ベイズ統計学は、不確実性を自然に扱える強力な統計的枠組みです。MCMCサンプリングの発展により、複雑なモデルも実用的な時間で解けるようになりました。
+<p>ベイズ統計学は、不確実性を自然に扱える強力な統計的枠組みです。MCMCサンプリングの発展により、複雑なモデルも実用的な時間で解けるようになりました。</p>
 
-次回は、具体的なデータセットを用いたベイズ分析の実践例を紹介します。]]></content><author><name>takuizum</name></author><category term="statistics" /><category term="ベイズ統計" /><category term="MCMC" /><category term="Stan" /><summary type="html"><![CDATA[ベイズ統計学の基礎概念から、MCMCサンプリング、実際のデータ分析まで包括的に解説します。Stanを使った実装例も含めて、初学者にも分かりやすく説明します。]]></summary></entry><entry><title type="html">Rによる項目反応理論の実装</title><link href="http://localhost:4000/blog/2025/07/05/irt-with-r/" rel="alternate" type="text/html" title="Rによる項目反応理論の実装" /><published>2025-07-05T00:00:00+09:00</published><updated>2025-07-05T00:00:00+09:00</updated><id>http://localhost:4000/blog/2025/07/05/irt-with-r</id><content type="html" xml:base="http://localhost:4000/blog/2025/07/05/irt-with-r/"><![CDATA[## 項目反応理論（IRT）とは
+<p>次回は、具体的なデータセットを用いたベイズ分析の実践例を紹介します。</p>]]></content><author><name>takuizum</name></author><category term="statistics" /><category term="ベイズ統計" /><category term="MCMC" /><category term="Stan" /><summary type="html"><![CDATA[ベイズ統計学の基礎概念から、MCMCサンプリング、実際のデータ分析まで包括的に解説します。Stanを使った実装例も含めて、初学者にも分かりやすく説明します。]]></summary></entry><entry><title type="html">Rによる項目反応理論の実装</title><link href="http://localhost:4000/blog/2025/07/05/irt-with-r/" rel="alternate" type="text/html" title="Rによる項目反応理論の実装" /><published>2025-07-05T00:00:00+09:00</published><updated>2025-07-05T00:00:00+09:00</updated><id>http://localhost:4000/blog/2025/07/05/irt-with-r</id><content type="html" xml:base="http://localhost:4000/blog/2025/07/05/irt-with-r/"><![CDATA[<h2 id="項目反応理論irtとは">項目反応理論（IRT）とは</h2>
 
-項目反応理論（Item Response Theory, IRT）は、テストや質問紙調査における項目（問題）と回答者の能力や特性の関係をモデル化する統計理論です。
+<p>項目反応理論（Item Response Theory, IRT）は、テストや質問紙調査における項目（問題）と回答者の能力や特性の関係をモデル化する統計理論です。</p>
 
-## 1パラメータモデル（Raschモデル）
+<h2 id="1パラメータモデルraschモデル">1パラメータモデル（Raschモデル）</h2>
 
-最もシンプルなIRTモデルで、項目の困難度のみをパラメータとします。
+<p>最もシンプルなIRTモデルで、項目の困難度のみをパラメータとします。</p>
 
-```r
-library(ltm)
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">ltm</span><span class="p">)</span><span class="w">
 
-# サンプルデータの読み込み
-data(LSAT)
+</span><span class="c1"># サンプルデータの読み込み</span><span class="w">
+</span><span class="n">data</span><span class="p">(</span><span class="n">LSAT</span><span class="p">)</span><span class="w">
 
-# Raschモデルの適用
-rasch_model <- rasch(LSAT)
-summary(rasch_model)
+</span><span class="c1"># Raschモデルの適用</span><span class="w">
+</span><span class="n">rasch_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rasch</span><span class="p">(</span><span class="n">LSAT</span><span class="p">)</span><span class="w">
+</span><span class="n">summary</span><span class="p">(</span><span class="n">rasch_model</span><span class="p">)</span><span class="w">
 
-# 項目特性曲線の描画
-plot(rasch_model, type = "ICC")
-```
+</span><span class="c1"># 項目特性曲線の描画</span><span class="w">
+</span><span class="n">plot</span><span class="p">(</span><span class="n">rasch_model</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ICC"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
 
-## 2パラメータモデル
+<h2 id="2パラメータモデル">2パラメータモデル</h2>
 
-困難度に加えて、項目の識別力も考慮したモデルです。
+<p>困難度に加えて、項目の識別力も考慮したモデルです。</p>
 
-```r
-# 2PLモデルの適用
-twopl_model <- ltm(LSAT ~ z1)
-summary(twopl_model)
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2PLモデルの適用</span><span class="w">
+</span><span class="n">twopl_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ltm</span><span class="p">(</span><span class="n">LSAT</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">z1</span><span class="p">)</span><span class="w">
+</span><span class="n">summary</span><span class="p">(</span><span class="n">twopl_model</span><span class="p">)</span><span class="w">
 
-# モデル比較
-anova(rasch_model, twopl_model)
-```
+</span><span class="c1"># モデル比較</span><span class="w">
+</span><span class="n">anova</span><span class="p">(</span><span class="n">rasch_model</span><span class="p">,</span><span class="w"> </span><span class="n">twopl_model</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
 
-## mirtパッケージによる高度な分析
+<h2 id="mirtパッケージによる高度な分析">mirtパッケージによる高度な分析</h2>
 
-```r
-library(mirt)
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">mirt</span><span class="p">)</span><span class="w">
 
-# 多次元IRTモデル
-multidim_model <- mirt(LSAT, 2)
-summary(multidim_model)
+</span><span class="c1"># 多次元IRTモデル</span><span class="w">
+</span><span class="n">multidim_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">mirt</span><span class="p">(</span><span class="n">LSAT</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w">
+</span><span class="n">summary</span><span class="p">(</span><span class="n">multidim_model</span><span class="p">)</span><span class="w">
 
-# モデル適合度の評価
-M2(multidim_model)
-```
+</span><span class="c1"># モデル適合度の評価</span><span class="w">
+</span><span class="n">M2</span><span class="p">(</span><span class="n">multidim_model</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
 
-## 実践的な応用
+<h2 id="実践的な応用">実践的な応用</h2>
 
-IRTは以下の分野で広く活用されています：
+<p>IRTは以下の分野で広く活用されています：</p>
 
-- 教育測定・評価
-- 心理測定
-- 品質管理
-- マーケティングリサーチ
+<ul>
+  <li>教育測定・評価</li>
+  <li>心理測定</li>
+  <li>品質管理</li>
+  <li>マーケティングリサーチ</li>
+</ul>
 
-## まとめ
+<h2 id="まとめ">まとめ</h2>
 
-Rを使うことで、IRTの様々なモデルを簡単に実装できます。データの性質に応じて適切なモデルを選択することが重要です。]]></content><author><name>takuizum</name></author><category term="tutorial" /><category term="R" /><category term="IRT" /><category term="項目反応理論" /><summary type="html"><![CDATA[項目反応理論（IRT）の理論的背景から、Rを使った実際の分析手法まで詳しく解説。ltmパッケージとmirtパッケージの使い分けも説明します。]]></summary></entry></feed>
+<p>Rを使うことで、IRTの様々なモデルを簡単に実装できます。データの性質に応じて適切なモデルを選択することが重要です。</p>]]></content><author><name>takuizum</name></author><category term="tutorial" /><category term="R" /><category term="IRT" /><category term="項目反応理論" /><summary type="html"><![CDATA[項目反応理論（IRT）の理論的背景から、Rを使った実際の分析手法まで詳しく解説。ltmパッケージとmirtパッケージの使い分けも説明します。]]></summary></entry></feed>

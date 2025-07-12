@@ -2,7 +2,7 @@
 layout: page
 title: 自己紹介
 hero: true
-description: 研究者・データサイエンティストとしての経歴とスキルをご紹介します。
+description: データサイエンティスト・心理測定学研究者としての経歴とスキルをご紹介します。
 permalink: /profile/
 ---
 
@@ -15,9 +15,9 @@ permalink: /profile/
         </div>
       </div>
       <div class="profile-info">
-        <h1>takuizum</h1>
-        <p class="profile-title">研究者・データサイエンティスト</p>
-        <p class="profile-subtitle">統計学・心理測定学・プログラミング</p>
+        <h1>板宮 拓巳（Takumi Itamiya）</h1>
+        <p class="profile-title">データサイエンティスト・心理測定学研究者</p>
+        <p class="profile-subtitle">教育測定・項目反応理論・機械学習</p>
       </div>
     </div>
   </div>
@@ -30,13 +30,12 @@ permalink: /profile/
         <div class="profile-section">
           <h2><i class="fas fa-user-circle"></i> プロフィール</h2>
           <p>
-            データサイエンス、統計学、心理測定学の分野で研究・開発に従事しています。
-            特に項目反応理論（IRT）や機械学習の手法を用いた教育測定、心理測定の研究を専門としており、
-            理論的な研究から実用的なソリューション開発まで幅広く取り組んでいます。
+            データサイエンス、統計学、心理測定学の分野で研究・開発に従事し、約7年以上にわたり教育測定やテスト理論の実装・応用を手がけてきました。
+            項目反応理論（IRT）や機械学習、共変量を用いた因果推論を駆使し、官公庁・大規模調査から企業向け小規模検定まで幅広いプロジェクトに携わっています。
           </p>
           <p>
-            R、Python、JavaScriptなどのプログラミング言語を駆使して、
-            研究成果をオープンソースソフトウェアとして公開し、学術コミュニティや産業界に貢献することを目指しています。
+            調査設計から分析、レポート作成、プリセールスや自動化ツール開発まで一貫して対応し、実務成果は各種報告書や学会発表にも採用されています。
+            研究成果を実務に結びつける経験を持ち、テスト理論や心理統計の知見を活用した統計分析でクライアントの意思決定を支援しています。
           </p>
         </div>
 
@@ -44,31 +43,39 @@ permalink: /profile/
           <h2><i class="fas fa-graduation-cap"></i> 学歴・経歴</h2>
           <div class="timeline">
             <div class="timeline-item">
-              <div class="timeline-date">2020年 - 現在</div>
+              <div class="timeline-date">2024年7月 - 現在</div>
               <div class="timeline-content">
-                <h3>フリーランス研究者・データサイエンティスト</h3>
-                <p>統計学・心理測定学の研究、データ分析ソリューションの開発、教育プログラムの設計・実施</p>
+                <h3>ドワンゴ株式会社 教育事業本部</h3>
+                <p>ZEN studyの学習ログ・テストデータを用いた習熟度定量化、機械学習や欠測値を含む統計解析による効果検証・アルゴリズム評価</p>
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-date">2018年 - 2020年</div>
+              <div class="timeline-date">2022年3月 - 現在</div>
               <div class="timeline-content">
-                <h3>○○大学 博士課程</h3>
-                <p>心理学専攻、項目反応理論と機械学習に関する研究</p>
+                <h3>プロメトリック株式会社（アソシエイトサイコメトリシャン）</h3>
+                <p>検定試験・言語テストのデータ分析、試験開発コンサルティング、プリセールス、非専門家向け説明、調査設計、報告作成</p>
+                <small>※2024年7月より業務委託契約に変更</small>
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-date">2016年 - 2018年</div>
+              <div class="timeline-date">2019年4月 - 2022年2月</div>
               <div class="timeline-content">
-                <h3>○○大学 修士課程</h3>
-                <p>心理学専攻、統計学・心理測定学の基礎研究</p>
+                <h3>株式会社ベネッセ教育総合研究所</h3>
+                <p>教育データの統計分析にかかわる基礎研究、言語テスト・学力テストのデータ解析、IRTの社会実装</p>
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-date">2012年 - 2016年</div>
+              <div class="timeline-date">2019年3月</div>
               <div class="timeline-content">
-                <h3>○○大学 学士課程</h3>
-                <p>心理学部、統計学・研究法の基礎習得</p>
+                <h3>東北大学大学院 教育学研究科 教育設計評価専攻 修了</h3>
+                <p>修士（教育学）</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2017年3月</div>
+              <div class="timeline-content">
+                <h3>東北大学 教育学部 卒業</h3>
+                <p>学士（教育学）</p>
               </div>
             </div>
           </div>
@@ -80,41 +87,40 @@ permalink: /profile/
             <div class="skill-category">
               <h3>プログラミング言語</h3>
               <div class="skill-tags">
-                <span class="skill-tag">R</span>
+                <span class="skill-tag">R（7年以上）</span>
+                <span class="skill-tag">Julia（5年以上）</span>
                 <span class="skill-tag">Python</span>
                 <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">C++</span>
+                <span class="skill-tag">SQL（BigQuery）</span>
               </div>
             </div>
             <div class="skill-category">
               <h3>データ分析・機械学習</h3>
               <div class="skill-tags">
-                <span class="skill-tag">項目反応理論</span>
-                <span class="skill-tag">ベイズ統計</span>
-                <span class="skill-tag">機械学習</span>
-                <span class="skill-tag">深層学習</span>
-                <span class="skill-tag">時系列分析</span>
+                <span class="skill-tag">項目反応理論（IRT）</span>
+                <span class="skill-tag">因果推論</span>
+                <span class="skill-tag">教師あり学習</span>
+                <span class="skill-tag">強化学習</span>
+                <span class="skill-tag">欠測値解析</span>
+                <span class="skill-tag">モデル平均</span>
               </div>
             </div>
             <div class="skill-category">
-              <h3>ツール・フレームワーク</h3>
+              <h3>数理最適化・ツール</h3>
               <div class="skill-tags">
-                <span class="skill-tag">TensorFlow</span>
-                <span class="skill-tag">PyTorch</span>
-                <span class="skill-tag">scikit-learn</span>
-                <span class="skill-tag">Stan</span>
-                <span class="skill-tag">Git</span>
+                <span class="skill-tag">混合整数計画法</span>
+                <span class="skill-tag">組合せ最適化</span>
+                <span class="skill-tag">Jupyter</span>
+                <span class="skill-tag">RMarkdown</span>
+                <span class="skill-tag">データ可視化</span>
               </div>
             </div>
             <div class="skill-category">
-              <h3>Web開発</h3>
+              <h3>クラウド・インフラ</h3>
               <div class="skill-tags">
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Shiny</span>
-                <span class="skill-tag">Streamlit</span>
+                <span class="skill-tag">Azure ML</span>
+                <span class="skill-tag">Google Cloud Platform</span>
+                <span class="skill-tag">自動化アプリ開発</span>
               </div>
             </div>
           </div>
@@ -123,57 +129,239 @@ permalink: /profile/
 
       <div class="profile-sidebar">
         <div class="sidebar-section">
-          <h3><i class="fas fa-contact-card"></i> 基本情報</h3>
+          <h3><i class="fas fa-info-circle"></i> 基本情報</h3>
           <div class="info-item">
-            <strong>所在地:</strong> 日本
+            <strong>所在地:</strong> 宮城県仙台市
           </div>
           <div class="info-item">
-            <strong>専門分野:</strong> 統計学、心理測定学、データサイエンス
+            <strong>専門分野:</strong> 教育測定、心理測定、データサイエンス
           </div>
           <div class="info-item">
-            <strong>言語:</strong> 日本語（ネイティブ）、英語（ビジネスレベル）
+            <strong>経験年数:</strong> 7年以上
           </div>
         </div>
 
         <div class="sidebar-section">
-          <h3><i class="fas fa-award"></i> 主な実績</h3>
+          <h3><i class="fas fa-award"></i> 主な実績・受賞</h3>
           <ul class="achievements-list">
-            <li>国際学会発表 15件以上</li>
-            <li>査読付き論文 8本</li>
-            <li>オープンソースパッケージ 5個</li>
-            <li>企業研修実施 20社以上</li>
+            <li>2020年度 日本教育心理学会 城戸奨励賞 受賞</li>
+            <li>査読付き論文「連続反応を対象とするベータ反応モデルの拡張とEMアルゴリズムによる母数推定」（教育心理学研究）</li>
+            <li>官公庁・大規模調査から企業向け検定まで多数のプロジェクト実績</li>
+            <li>調査設計・分析・報告の一貫対応</li>
           </ul>
         </div>
 
         <div class="sidebar-section">
-          <h3><i class="fas fa-heart"></i> 趣味・関心</h3>
+          <h3><i class="fas fa-lightbulb"></i> 研究・関心分野</h3>
           <div class="hobby-tags">
-            <span class="hobby-tag">統計学</span>
-            <span class="hobby-tag">プログラミング</span>
-            <span class="hobby-tag">読書</span>
-            <span class="hobby-tag">音楽</span>
-            <span class="hobby-tag">旅行</span>
+            <span class="hobby-tag">データクレンジング</span>
+            <span class="hobby-tag">可視化手法</span>
+            <span class="hobby-tag">欠測値解析</span>
+            <span class="hobby-tag">インタラクティブ可視化</span>
+            <span class="hobby-tag">組合せ最適化</span>
+            <span class="hobby-tag">資源配置</span>
           </div>
         </div>
 
         <div class="sidebar-section">
           <h3><i class="fas fa-link"></i> リンク</h3>
           <div class="social-links-profile">
-            <a href="https://github.com/{{ site.social.github }}" target="_blank" class="social-link">
+            <a href="https://github.com/takuizum" target="_blank" class="social-link">
               <i class="fab fa-github"></i> GitHub
             </a>
-            {% if site.social.twitter %}
-            <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" class="social-link">
-              <i class="fab fa-twitter"></i> Twitter
+            <a href="mailto:contact@example.com" class="social-link">
+              <i class="fas fa-envelope"></i> お問い合わせ
             </a>
-            {% endif %}
-            {% if site.social.linkedin %}
-            <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" class="social-link">
-              <i class="fab fa-linkedin"></i> LinkedIn
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+    .sidebar-section {
+        padding: 1.8rem;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-item {
+        padding: 1.2rem 1.2rem 1.2rem 2.5rem;
+    }
+    
+    .skill-category {
+        padding: 1.5rem;
+    }
+}
+</style>
+
+<section class="profile-hero">
+  <div class="container">
+    <div class="profile-header">
+      <div class="profile-image">
+        <div class="profile-placeholder">
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+      <div class="profile-info">
+        <h1>板宮 拓巳（Takumi Itamiya）</h1>
+        <p class="profile-title">データサイエンティスト・心理測定学研究者</p>
+        <p class="profile-subtitle">教育測定・項目反応理論・機械学習</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profile-content">
+  <div class="container">
+    <div class="profile-grid">
+      <div class="profile-main">
+        <div class="profile-section">
+          <h2><i class="fas fa-user-circle"></i> プロフィール</h2>
+          <p>
+            データサイエンス、統計学、心理測定学の分野で研究・開発に従事し、約7年以上にわたり教育測定やテスト理論の実装・応用を手がけてきました。
+            項目反応理論（IRT）や機械学習、共変量を用いた因果推論を駆使し、官公庁・大規模調査から企業向け小規模検定まで幅広いプロジェクトに携わっています。
+          </p>
+          <p>
+            調査設計から分析、レポート作成、プリセールスや自動化ツール開発まで一貫して対応し、実務成果は各種報告書や学会発表にも採用されています。
+            研究成果を実務に結びつける経験を持ち、テスト理論や心理統計の知見を活用した統計分析でクライアントの意思決定を支援しています。
+          </p>
+        </div>
+
+        <div class="profile-section">
+          <h2><i class="fas fa-graduation-cap"></i> 学歴・経歴</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2024年7月 - 現在</div>
+              <div class="timeline-content">
+                <h3>ドワンゴ株式会社 教育事業本部</h3>
+                <p>ZEN studyの学習ログ・テストデータを用いた習熟度定量化、機械学習や欠測値を含む統計解析による効果検証・アルゴリズム評価</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2022年3月 - 現在</div>
+              <div class="timeline-content">
+                <h3>プロメトリック株式会社（アソシエイトサイコメトリシャン）</h3>
+                <p>検定試験・言語テストのデータ分析、試験開発コンサルティング、プリセールス、非専門家向け説明、調査設計、報告作成</p>
+                <small>※2024年7月より業務委託契約に変更</small>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2019年4月 - 2022年2月</div>
+              <div class="timeline-content">
+                <h3>株式会社ベネッセ教育総合研究所</h3>
+                <p>教育データの統計分析にかかわる基礎研究、言語テスト・学力テストのデータ解析、IRTの社会実装</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2019年3月</div>
+              <div class="timeline-content">
+                <h3>東北大学大学院 教育学研究科 教育設計評価専攻 修了</h3>
+                <p>修士（教育学）</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2017年3月</div>
+              <div class="timeline-content">
+                <h3>東北大学 教育学部 卒業</h3>
+                <p>学士（教育学）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-section">
+          <h2><i class="fas fa-code"></i> 技術スキル</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3>プログラミング言語</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">R（7年以上）</span>
+                <span class="skill-tag">Julia（5年以上）</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">SQL（BigQuery）</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>データ分析・機械学習</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">項目反応理論（IRT）</span>
+                <span class="skill-tag">因果推論</span>
+                <span class="skill-tag">教師あり学習</span>
+                <span class="skill-tag">強化学習</span>
+                <span class="skill-tag">欠測値解析</span>
+                <span class="skill-tag">モデル平均</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>数理最適化・ツール</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">混合整数計画法</span>
+                <span class="skill-tag">組合せ最適化</span>
+                <span class="skill-tag">Jupyter</span>
+                <span class="skill-tag">RMarkdown</span>
+                <span class="skill-tag">データ可視化</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>クラウド・インフラ</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Azure ML</span>
+                <span class="skill-tag">Google Cloud Platform</span>
+                <span class="skill-tag">自動化アプリ開発</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-sidebar">
+        <div class="sidebar-section">
+          <h3><i class="fas fa-info-circle"></i> 基本情報</h3>
+          <div class="info-item">
+            <strong>所在地:</strong> 宮城県仙台市
+          </div>
+          <div class="info-item">
+            <strong>専門分野:</strong> 教育測定、心理測定、データサイエンス
+          </div>
+          <div class="info-item">
+            <strong>経験年数:</strong> 7年以上
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3><i class="fas fa-award"></i> 主な実績・受賞</h3>
+          <ul class="achievements-list">
+            <li>2020年度 日本教育心理学会 城戸奨励賞 受賞</li>
+            <li>査読付き論文「連続反応を対象とするベータ反応モデルの拡張とEMアルゴリズムによる母数推定」（教育心理学研究）</li>
+            <li>官公庁・大規模調査から企業向け検定まで多数のプロジェクト実績</li>
+            <li>調査設計・分析・報告の一貫対応</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h3><i class="fas fa-lightbulb"></i> 研究・関心分野</h3>
+          <div class="hobby-tags">
+            <span class="hobby-tag">データクレンジング</span>
+            <span class="hobby-tag">可視化手法</span>
+            <span class="hobby-tag">欠測値解析</span>
+            <span class="hobby-tag">インタラクティブ可視化</span>
+            <span class="hobby-tag">組合せ最適化</span>
+            <span class="hobby-tag">資源配置</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3><i class="fas fa-link"></i> リンク</h3>
+          <div class="social-links-profile">
+            <a href="https://github.com/takuizum" target="_blank" class="social-link">
+              <i class="fab fa-github"></i> GitHub
             </a>
-            {% endif %}
-            <a href="mailto:{{ site.social.email }}" class="social-link">
-              <i class="fas fa-envelope"></i> Email
+            <a href="mailto:contact@example.com" class="social-link">
+              <i class="fas fa-envelope"></i> お問い合わせ
             </a>
           </div>
         </div>
