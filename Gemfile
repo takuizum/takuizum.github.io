@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
-# Jekyll Cayman Blog Theme
-gem "jekyll-theme-cayman-blog"
+# Jekyll Cayman Theme (GitHub Pages compatible)
+gem "jekyll-theme-cayman"
 
 # GitHub Pages compatibility - GitHubが使用するJekyllバージョンに合わせる
 gem "github-pages", group: :jekyll_plugins
