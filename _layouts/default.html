@@ -6,138 +6,604 @@
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
     
+    <!-- External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* 基本スタイル */
-        * { box-sizing: border-box; }
-        body { 
-            margin: 0; 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #64748b;
+            --accent-color: #06b6d4;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius: 8px;
+            --radius-lg: 12px;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+        }
+        
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fff;
+            color: var(--text-primary);
+            background-color: var(--background);
+            font-size: 16px;
+            scroll-behavior: smooth;
         }
         
-        .wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary);
         }
         
-        /* ヘッダー */
-        .site-header {
-            background: #2c3e50;
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .site-title {
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .site-nav {
-            margin-top: 1rem;
-        }
-        
-        .page-link {
-            color: white;
-            text-decoration: none;
-            margin-right: 2rem;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        
-        .page-link:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-        
-        /* メインコンテンツ */
-        .page-content {
-            padding: 2rem 0;
-            min-height: 60vh;
-        }
-        
-        h1 { 
-            color: #2c3e50; 
-            font-size: 2.5rem; 
-            margin-bottom: 1rem;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 0.5rem;
-        }
-        
-        h2 { 
-            color: #34495e; 
-            font-size: 2rem; 
-            margin: 2rem 0 1rem 0;
-        }
-        
-        h3 { 
-            color: #34495e; 
-            font-size: 1.5rem; 
-            margin: 1.5rem 0 1rem 0;
-        }
+        h1 { font-size: 2.5rem; margin-bottom: var(--spacing-lg); }
+        h2 { font-size: 2rem; margin-bottom: var(--spacing-md); }
+        h3 { font-size: 1.5rem; margin-bottom: var(--spacing-md); }
+        h4 { font-size: 1.25rem; margin-bottom: var(--spacing-sm); }
         
         p {
-            margin-bottom: 1rem;
-            text-align: justify;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
         
         a {
-            color: #3498db;
+            color: var(--primary-color);
             text-decoration: none;
+            transition: all 0.2s ease;
         }
         
         a:hover {
+            color: var(--primary-dark);
             text-decoration: underline;
         }
         
-        /* フッター */
-        .site-footer {
-            background: #34495e;
-            color: white;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            text-align: center;
+        /* Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
         }
         
-        /* レスポンシブ */
+        .container-sm {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        /* Header */
+        .site-header {
+            background: var(--background);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) 0;
+        }
+        
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .site-title:hover {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .main-nav {
+            display: flex;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.2s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-color);
+            border-radius: 1px;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-xl);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            background: var(--surface);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+            color: var(--primary-dark);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            text-decoration: none;
+            color: white;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-color);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: var(--spacing-xl);
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        
+        /* Sections */
+        .section {
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Updates Section */
+        .update-card {
+            border-left: 4px solid var(--primary-color);
+            padding-left: var(--spacing-lg);
+        }
+        
+        .update-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .update-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* Footer */
+        .site-footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: var(--spacing-2xl) 0 var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .footer-section h4 {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-xl);
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .wrapper { padding: 0 15px; }
-            .page-link { 
-                display: block; 
-                margin: 0.5rem 0; 
+            .container {
+                padding: 0 var(--spacing-md);
             }
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
+            
+            .header-content {
+                padding: var(--spacing-sm) 0;
+            }
+            
+            .main-nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: var(--spacing-xl) 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: var(--spacing-xl) 0;
+            }
+        }
+        
+        /* Utilities */
+        .text-center { text-align: center; }
+        .text-muted { color: var(--text-muted); }
+        .mt-lg { margin-top: var(--spacing-lg); }
+        .mb-lg { margin-bottom: var(--spacing-lg); }
+        .hidden { display: none; }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
 <body>
     <header class="site-header">
-        <div class="wrapper">
-            <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-            <nav class="site-nav">
-                {% for item in site.navigation %}
-                    <a class="page-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                {% endfor %}
-            </nav>
+        <div class="container">
+            <div class="header-content">
+                <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+                <nav class="main-nav">
+                    {% for item in site.navigation %}
+                        <a href="{{ item.url | relative_url }}" class="nav-link{% if page.url == item.url %} active{% endif %}">
+                            {{ item.title }}
+                        </a>
+                    {% endfor %}
+                </nav>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <main class="page-content">
-        <div class="wrapper">
-            {{ content }}
-        </div>
+    <main class="main-content">
+        {{ content }}
     </main>
 
     <footer class="site-footer">
-        <div class="wrapper">
-            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>{{ site.title }}</h4>
+                    <p>{{ site.description }}</p>
+                    <div class="social-links">
+                        {% if site.social.github %}
+                            <a href="https://github.com/{{ site.social.github }}" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        {% endif %}
+                        {% if site.social.twitter %}
+                            <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        {% endif %}
+                        {% if site.social.email %}
+                            <a href="mailto:{{ site.social.email }}" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>ナビゲーション</h4>
+                    {% for item in site.navigation %}
+                        <p><a href="{{ item.url | relative_url }}">{{ item.title }}</a></p>
+                    {% endfor %}
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <p>Email: {{ site.social.email }}</p>
+                    <p>研究・開発に関するご相談やお問い合わせはお気軽にどうぞ。</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.main-nav')?.classList.toggle('show');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .update-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>

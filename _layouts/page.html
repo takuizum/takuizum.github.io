@@ -2,9 +2,209 @@
 layout: default
 ---
 
+<style>
+/* Page specific styles */
+.page-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: white;
+}
+
+.page-description {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.page-content {
+    padding: var(--spacing-2xl) 0;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+/* Blog specific styles */
+.blog-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.blog-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: white;
+}
+
+.blog-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.blog-content {
+    padding: var(--spacing-2xl) 0;
+}
+
+.posts-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-preview {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.post-preview:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.post-title {
+    margin-bottom: var(--spacing-sm);
+}
+
+.post-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.post-title a:hover {
+    color: var(--primary-color);
+}
+
+.post-meta {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.post-meta i {
+    margin-right: var(--spacing-xs);
+    color: var(--primary-color);
+}
+
+.post-excerpt {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+}
+
+.read-more {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: all 0.2s ease;
+}
+
+.read-more:hover {
+    color: var(--primary-dark);
+    transform: translateX(4px);
+    text-decoration: none;
+}
+
+.no-posts {
+    text-align: center;
+    padding: var(--spacing-2xl);
+}
+
+.no-posts-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.no-posts-content i {
+    font-size: 4rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-lg);
+}
+
+.no-posts-content h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.no-posts-content p {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .page-hero h1,
+    .blog-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-description,
+    .blog-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .post-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+}
+</style>
+
 <article class="page">
   <header class="page-header">
-    {% if page.hero %}
+    {% if page.title == "ブログ" %}
+    <section class="blog-hero">
+      <div class="container">
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}
+        <p class="blog-subtitle">{{ page.description }}</p>
+        {% endif %}
+      </div>
+    </section>
+    {% elsif page.hero %}
     <section class="page-hero">
       <div class="container">
         <h1 class="page-title">{{ page.title }}</h1>
@@ -14,11 +214,21 @@ layout: default
       </div>
     </section>
     {% else %}
-    <h1 class="page-title">{{ page.title }}</h1>
+    <div class="container">
+      <div class="page-content">
+        <h1 class="page-title">{{ page.title }}</h1>
+      </div>
+    </div>
     {% endif %}
   </header>
 
+  {% if page.title == "ブログ" %}
+  {{ content }}
+  {% else %}
   <div class="page-content">
-    {{ content }}
+    <div class="container">
+      {{ content }}
+    </div>
   </div>
+  {% endif %}
 </article>
