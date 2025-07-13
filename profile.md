@@ -90,7 +90,6 @@ permalink: /profile/
                 <span class="skill-tag">R（7年以上）</span>
                 <span class="skill-tag">Julia（5年以上）</span>
                 <span class="skill-tag">Python</span>
-                <span class="skill-tag">JavaScript</span>
                 <span class="skill-tag">SQL（BigQuery）</span>
               </div>
             </div>
@@ -99,9 +98,9 @@ permalink: /profile/
               <div class="skill-tags">
                 <span class="skill-tag">テスト理論</span>
                 <span class="skill-tag">項目反応理論（IRT）</span>
+                <span class="skill-tag">欠測値解析</span>
                 <span class="skill-tag">因果推論</span>
                 <span class="skill-tag">教師あり学習</span>
-                <span class="skill-tag">欠測値解析</span>
                 <span class="skill-tag">モデル平均</span>
               </div>
             </div>
