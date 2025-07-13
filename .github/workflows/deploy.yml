@@ -53,6 +53,11 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: true
       
+      - name: Configure Bundle
+        run: |
+          bundle config set --local frozen false
+          bundle install
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
