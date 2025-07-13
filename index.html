@@ -1,74 +1,240 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PsyTestLab - 研究・ソリューション</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-    .hero { background: #f4f4f4; padding: 20px; margin: 20px 0; }
-    .btn { display: inline-block; padding: 10px 20px; background: #007cba; color: white; text-decoration: none; margin: 5px; }
-    .updates, .services { margin: 30px 0; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsyTestLab - 研究・ソリューション</title>
+    <meta name="description" content="データサイエンス、統計学、プログラミングの分野で研究・開発に従事。学術研究から実践的なソリューション開発まで幅広く取り組んでいます。">
+    
+    <!-- External stylesheets -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Basic styling matching Jekyll Cayman theme */
+        * { box-sizing: border-box; }
+        body { 
+            margin: 0; 
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #606c71;
+        }
+        
+        .page-header {
+            color: #fff;
+            text-align: center;
+            background-color: #159957;
+            background-image: linear-gradient(120deg, #155799, #159957);
+            padding: 2rem 1rem;
+        }
+        
+        .project-name {
+            margin-top: 0;
+            margin-bottom: 0.1rem;
+            font-size: 3.25rem;
+            font-weight: normal;
+            color: #fff;
+        }
+        
+        .project-tagline {
+            margin-bottom: 2rem;
+            font-weight: normal;
+            opacity: 0.7;
+            font-size: 1.25rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 0.3rem;
+            transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+        
+        .btn:hover {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .main-content {
+            word-wrap: break-word;
+            max-width: 64rem;
+            padding: 2rem 6rem;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .main-content h1, .main-content h2, .main-content h3 {
+            color: #159957;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+        
+        .main-content h1 { font-size: 2.25rem; }
+        .main-content h2 { font-size: 1.75rem; }
+        .main-content h3 { font-size: 1.25rem; }
+        
+        .updates-grid, .services-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .services-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .update-card, .service-card {
+            padding: 1.5rem;
+            border: 1px solid #d1d5da;
+            border-radius: 0.3rem;
+            background: #f6f8fa;
+        }
+        
+        .update-date {
+            color: #586069;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+            color: #159957;
+            margin-bottom: 1rem;
+        }
+        
+        .contact {
+            background: #f6f8fa;
+            padding: 2rem;
+            border-radius: 0.3rem;
+            margin: 2rem 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: #159957;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .site-footer {
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: solid 1px #eff0f1;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #959da5;
+        }
+        
+        @media screen and (max-width: 42em) {
+            .main-content {
+                padding: 2rem 1rem;
+                font-size: 1rem;
+            }
+            
+            .project-name {
+                font-size: 1.75rem;
+            }
+            
+            .project-tagline {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>PsyTestLab</h1>
-    <nav>
-      <a href="/">ホーム</a> | 
-      <a href="/profile/">自己紹介</a> | 
-      <a href="/publications/">出版・論文</a> | 
-      <a href="/blog/">ブログ</a>
-    </nav>
-  </header>
+    <header class="page-header" role="banner">
+        <h1 class="project-name">PsyTestLab</h1>
+        <h2 class="project-tagline">データサイエンス・心理測定学・統計分析</h2>
+        <a href="/profile/" class="btn">プロフィールを見る</a>
+        <a href="/publications/" class="btn">出版・論文</a>
+        <a href="/blog/" class="btn">ブログ</a>
+    </header>
 
-  <main>
-    <div class="hero">
-      <h2>テスト理論で評価・人事を最適化</h2>
-      <p>学術研究と実践的なソリューション開発を通じて、心理計量学（データサイエンス・統計学・プログラミング）の分野の最新知見を利用して新たな価値を創出しています。</p>
-      <a href="/profile/" class="btn">プロフィールを見る</a>
-      <a href="#contact" class="btn">お問い合わせ</a>
-    </div>
+    <main id="content" class="main-content" role="main">
+        <div class="hero">
+            <h1>テスト理論で評価・人事を最適化</h1>
+            <p>学術研究と実践的なソリューション開発を通じて、心理計量学（データサイエンス・統計学・プログラミング）の分野の最新知見を利用して新たな価値を創出しています。</p>
+        </div>
 
-    <section class="updates">
-      <h2>最新の更新</h2>
-      <div class="update-card">
-        <strong>2025年7月15日</strong>
-        <h3>日本テスト学会誌に論文が掲載されました</h3>
-        <p>「局所依存構造を持つテストデータの解析法の展望」が日本テスト学会誌第21巻第1号に掲載されました。</p>
-      </div>
-      <div class="update-card">
-        <strong>2025年7月13日</strong>
-        <h3>ホームページを開設しました</h3>
-        <p>PsyTestLabの公式ホームページを開設いたしました。</p>
-      </div>
-    </section>
+        <section class="updates">
+            <h2>最新の更新</h2>
+            <div class="updates-grid">
+                <div class="update-card">
+                    <div class="update-date">2025年07月15日</div>
+                    <h3>日本テスト学会誌に論文が掲載されました</h3>
+                    <p>「局所依存構造を持つテストデータの解析法の展望」が日本テスト学会誌第21巻第1号に掲載されました。項目反応理論の基本的な仮定である局所独立性についての最新の研究に基づいたレビュー論文です。</p>
+                </div>
+                <div class="update-card">
+                    <div class="update-date">2025年07月13日</div>
+                    <h3>ホームページを開設しました</h3>
+                    <p>PsyTestLabの公式ホームページを開設いたしました。研究成果、サービス、最新情報などを発信してまいります。</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="services">
-      <h2>提供サービス</h2>
-      <div class="service-card">
-        <h3>心理測定・テスト開発</h3>
-        <p>項目反応理論（IRT）を用いたテスト開発、学力・能力測定、評価システムの設計・分析サポートを提供します。</p>
-      </div>
-      <div class="service-card">
-        <h3>統計解析・データサイエンス</h3>
-        <p>RやPythonを使用した高度な統計解析、機械学習モデリング、データ分析システムの開発。</p>
-      </div>
-      <div class="service-card">
-        <h3>研究コンサルティング</h3>
-        <p>心理学・教育学研究における統計的手法の選択、分析設計、結果解釈に関するコンサルティング。</p>
-      </div>
-    </section>
-  </main>
+        <section class="services">
+            <h2>提供サービス</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>心理測定・テスト開発</h3>
+                    <p>項目反応理論（IRT）を用いたテスト開発、学力・能力測定、評価システムの設計・分析サポートを提供します。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>統計解析・データサイエンス</h3>
+                    <p>RやPythonを使用した高度な統計解析、機械学習モデリング、データ分析システムの開発。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>研究コンサルティング</h3>
+                    <p>心理学・教育学研究における統計的手法の選択、分析設計、結果解釈に関するコンサルティング。</p>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <h3>PsyTestLab</h3>
-    <p>Email: sep10.taku.izum@gmail.com</p>
-    <div>
-      <a href="https://github.com/takuizum" target="_blank">GitHub</a> | 
-      <a href="https://twitter.com/takuizum" target="_blank">Twitter</a>
-    </div>
-    <p>&copy; 2025 PsyTestLab. All rights reserved.</p>
-  </footer>
+        <section id="contact" class="contact">
+            <h2>お問い合わせ</h2>
+            <p>ご質問やご相談がございましたら、お気軽にお問い合わせください。</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> sep10.taku.izum@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://github.com/takuizum" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://twitter.com/takuizum" target="_blank">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <span class="site-footer-credits">&copy; 2025 PsyTestLab. All rights reserved.</span>
+        </footer>
+    </main>
 </body>
 </html>
