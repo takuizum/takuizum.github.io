@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>BibTeX to Jekyll Publications Converter | takuizum</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="BibTeX to Jekyll Publications Converter" />
+<meta name="author" content="takuizum" />
+<meta property="og:locale" content="ja" />
+<meta name="description" content="データサイエンス、統計学、プログラミングの分野で研究・開発に従事。 学術研究から実践的なソリューション開発まで幅広く取り組んでいます。" />
+<meta property="og:description" content="データサイエンス、統計学、プログラミングの分野で研究・開発に従事。 学術研究から実践的なソリューション開発まで幅広く取り組んでいます。" />
+<link rel="canonical" href="http://localhost:4000/scripts/" />
+<meta property="og:url" content="http://localhost:4000/scripts/" />
+<meta property="og:site_name" content="takuizum" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="BibTeX to Jekyll Publications Converter" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"takuizum"},"description":"データサイエンス、統計学、プログラミングの分野で研究・開発に従事。 学術研究から実践的なソリューション開発まで幅広く取り組んでいます。","headline":"BibTeX to Jekyll Publications Converter","url":"http://localhost:4000/scripts/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="takuizum" />
+  
+  
+</head>
+
+  <body>
+    <header class="header">
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <h1><a href="/">takuizum</a></h1>
+      </div>
+      <ul class="nav-menu">
+        
+        <li class="nav-item">
+          <a href="/" 
+             class="nav-link">ホーム</a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="/profile/" 
+             class="nav-link">自己紹介</a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="/publications/" 
+             class="nav-link">出版・論文</a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="/blog/" 
+             class="nav-link">ブログ</a>
+        </li>
+        
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="page">
+  <header class="page-header">
+    
+    <h1 class="page-title">BibTeX to Jekyll Publications Converter</h1>
+    
+  </header>
+
+  <div class="page-content">
+    <h1 id="bibtex-to-jekyll-publications-converter">BibTeX to Jekyll Publications Converter</h1>
+
+<p>このフォルダには、BibTeXファイルをJekyll用の論文Markdownファイルに変換するスクリプトが含まれています。</p>
+
+<h2 id="必要な依存関係">必要な依存関係</h2>
+
+<h3 id="pythonバージョン">Pythonバージョン</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>bibtexparser
+</code></pre></div></div>
+
+<h3 id="juliaバージョン">Juliaバージョン</h3>
+<div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="n">Pkg</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="x">(</span><span class="s">"Bibliography"</span><span class="x">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="x">(</span><span class="s">"ArgParse"</span><span class="x">)</span>
+</code></pre></div></div>
+
+<h2 id="使用方法">使用方法</h2>
+
+<h3 id="基本的な使用方法">基本的な使用方法</h3>
+
+<p><strong>Windows (PowerShell/Command Prompt):</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pythonバージョン</span>
+python scripts<span class="se">\b</span>ibtex_converter.py _bibliography<span class="se">\r</span>eferences.bib
+
+<span class="c"># Juliaバージョン  </span>
+julia scripts<span class="se">\b</span>ibtex_converter.jl _bibliography<span class="se">\r</span>eferences.bib
+
+<span class="c"># バッチファイル（自動でPythonまたはJuliaを選択）</span>
+scripts<span class="se">\c</span>onvert_bibtex.bat _bibliography<span class="se">\r</span>eferences.bib
+</code></pre></div></div>
+
+<p><strong>Unix/Linux/macOS:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pythonバージョン</span>
+python3 scripts/bibtex_converter.py _bibliography/references.bib
+
+<span class="c"># Juliaバージョン</span>
+julia scripts/bibtex_converter.jl _bibliography/references.bib
+
+<span class="c"># シェルスクリプト（自動でPythonまたはJuliaを選択）</span>
+./scripts/convert_bibtex.sh _bibliography/references.bib
+</code></pre></div></div>
+
+<h3 id="オプション">オプション</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">--output-dir</code>, <code class="language-plaintext highlighter-rouge">-o</code>: 出力ディレクトリを指定（デフォルト: <code class="language-plaintext highlighter-rouge">_publications</code>）</li>
+  <li><code class="language-plaintext highlighter-rouge">--force</code>, <code class="language-plaintext highlighter-rouge">-f</code>: 既存ファイルを上書き</li>
+  <li><code class="language-plaintext highlighter-rouge">--clean</code>, <code class="language-plaintext highlighter-rouge">-c</code>: 変換前に出力ディレクトリ内の既存.mdファイルを削除</li>
+</ul>
+
+<p><strong>例:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 出力ディレクトリを指定</span>
+python scripts<span class="se">\b</span>ibtex_converter.py references.bib <span class="nt">--output-dir</span> publications
+
+<span class="c"># 既存ファイルを強制上書き</span>
+python scripts<span class="se">\b</span>ibtex_converter.py references.bib <span class="nt">--force</span>
+
+<span class="c"># 既存.mdファイルを削除してから変換（推奨）</span>
+python scripts<span class="se">\b</span>ibtex_converter.py references.bib <span class="nt">--clean</span>
+
+<span class="c"># 複数オプションを使用</span>
+python scripts<span class="se">\b</span>ibtex_converter.py references.bib <span class="nt">-o</span> publications <span class="nt">-c</span> <span class="nt">-f</span>
+</code></pre></div></div>
+
+<h3 id="バッチファイルシェルスクリプトの自動クリーンアップ">バッチファイル・シェルスクリプトの自動クリーンアップ</h3>
+
+<p><code class="language-plaintext highlighter-rouge">convert_bibtex.bat</code> および <code class="language-plaintext highlighter-rouge">convert_bibtex.sh</code> は自動的に <code class="language-plaintext highlighter-rouge">--clean</code> オプションを使用して、毎回既存のMarkdownファイルを削除してから新しいファイルを生成します。これにより、削除されたBibTeXエントリに対応する古いMarkdownファイルが残ることを防げます。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># バッチファイル使用時は自動的にクリーンアップされます</span>
+scripts<span class="se">\c</span>onvert_bibtex.bat _bibliography<span class="se">\r</span>eferences.bib
+</code></pre></div></div>
+
+<h2 id="ファイル構造">ファイル構造</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scripts/
+├── bibtex_converter.py     # Python版コンバーター
+├── bibtex_converter.jl     # Julia版コンバーター
+├── convert_bibtex.bat      # Windows用バッチファイル
+├── convert_bibtex.sh       # Unix/Linux/macOS用シェルスクリプト
+└── README.md              # このファイル
+</code></pre></div></div>
+
+<h2 id="生成されるファイル">生成されるファイル</h2>
+
+<p>各BibTeXエントリから、以下の形式のMarkdownファイルが生成されます：</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">論文タイトル"</span>
+<span class="na">year</span><span class="pi">:</span> <span class="m">2024</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">journal</span>
+<span class="na">authors</span><span class="pi">:</span> <span class="s2">"</span><span class="s">著者名"</span>
+<span class="na">venue</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ジャーナル名"</span>
+<span class="na">volume</span><span class="pi">:</span> <span class="s2">"</span><span class="s">巻(号)"</span>
+<span class="na">pages</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ページ番号"</span>
+<span class="na">doi</span><span class="pi">:</span> <span class="s2">"</span><span class="s">DOI番号"</span>
+<span class="na">abstract</span><span class="pi">:</span> <span class="s2">"</span><span class="s">概要"</span>
+<span class="nn">---</span>
+
+<span class="gu">## BibTeX to Jekyll Publications Converter</span>
+
+<span class="gs">**著者:**</span> 
+<span class="gs">**出版年:**</span> 
+...
+
+<span class="gu">### APA 7th Style Citation</span>
+著者 (年). タイトル. ジャーナル名...
+</code></pre></div></div>
+
+<h2 id="サポートされるbibtexエントリタイプ">サポートされるBibTeXエントリタイプ</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">@article</code> → <code class="language-plaintext highlighter-rouge">journal</code> (ジャーナル論文)</li>
+  <li><code class="language-plaintext highlighter-rouge">@inproceedings</code>, <code class="language-plaintext highlighter-rouge">@incollection</code> → <code class="language-plaintext highlighter-rouge">conference</code> (国内学会発表)</li>
+  <li><code class="language-plaintext highlighter-rouge">@book</code> → <code class="language-plaintext highlighter-rouge">book</code> (書籍)</li>
+  <li><code class="language-plaintext highlighter-rouge">@phdthesis</code>, <code class="language-plaintext highlighter-rouge">@mastersthesis</code> → <code class="language-plaintext highlighter-rouge">thesis</code> (学位論文)</li>
+  <li><code class="language-plaintext highlighter-rouge">@techreport</code> → <code class="language-plaintext highlighter-rouge">report</code> (技術報告書)</li>
+  <li><code class="language-plaintext highlighter-rouge">@misc</code> → <code class="language-plaintext highlighter-rouge">misc</code> (その他)</li>
+</ul>
+
+<p><strong>注意:</strong> 現在、BibTeXの<code class="language-plaintext highlighter-rouge">@inproceedings</code>と<code class="language-plaintext highlighter-rouge">@incollection</code>は国内学会発表として扱われます。将来的に国際学会発表を追加する場合は、手動でタイプを<code class="language-plaintext highlighter-rouge">international_conference</code>に変更してください。</p>
+
+<h2 id="トラブルシューティング">トラブルシューティング</h2>
+
+<h3 id="pythonでエラーが発生する場合">Pythonでエラーが発生する場合</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> bibtexparser
+</code></pre></div></div>
+
+<h3 id="juliaでエラーが発生する場合">Juliaでエラーが発生する場合</h3>
+<div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="n">Pkg</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">update</span><span class="x">()</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="x">(</span><span class="s">"Bibliography"</span><span class="x">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="x">(</span><span class="s">"ArgParse"</span><span class="x">)</span>
+</code></pre></div></div>
+
+<h3 id="ファイル名の重複">ファイル名の重複</h3>
+<p>同じ著者・年・タイトルのエントリがある場合、ファイル名が重複する可能性があります。
+<code class="language-plaintext highlighter-rouge">--force</code> オプションを使用して上書きするか、手動でファイル名を変更してください。</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>takuizum</h3>
+        <p>データサイエンス、統計学、プログラミングの分野で研究・開発に従事。 学術研究から実践的なソリューション開発まで幅広く取り組んでいます。</p>
+      </div>
+      <div class="footer-section">
+        <h4>リンク</h4>
+        <ul>
+          
+          <li><a href="/">ホーム</a></li>
+          
+          <li><a href="/profile/">自己紹介</a></li>
+          
+          <li><a href="/publications/">出版・論文</a></li>
+          
+          <li><a href="/blog/">ブログ</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>SNS</h4>
+        <div class="social-links">
+          
+          <a href="https://github.com/takuizum" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          
+          
+          
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 takuizum. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+    
+    <script src="/assets/js/main.js"></script>
+
+
+
+
+
+  </body>
+</html>

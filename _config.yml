@@ -24,7 +24,7 @@ author:
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: jekyll-theme-cayman-blog
+theme: jekyll-theme-cayman
 
 # Plugins
 plugins:
@@ -32,7 +32,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
-  - jekyll-archives
 
 # Pagination
 paginate: 5

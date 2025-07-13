@@ -1,91 +1,72 @@
 ---
 layout: page
 title: 出版・論文
-hero: true
 description: 研究成果として発表した論文、書籍、ソフトウェアパッケージなどをご紹介します。
 permalink: /publications/
-scripts: [publications]
 ---
 
-<section class="publications-content">
-  <div class="container">
-    <div class="publications-nav">
-      <button class="filter-btn active" data-filter="all">すべて</button>
-      <button class="filter-btn" data-filter="journal">査読付き論文</button>
-      <button class="filter-btn" data-filter="conference">学会発表</button>
-      <button class="filter-btn" data-filter="book">書籍</button>
-      <button class="filter-btn" data-filter="software">ソフトウェア</button>
-    </div>
+<link rel="stylesheet" href="{{ '/assets/css/publications.css' | relative_url }}">
 
-    <div class="publications-grid" id="publications-grid">
-      {% for publication in site.publications %}
-      <div class="publication-card" data-category="{{ publication.type }}">
-        <div class="publication-header">
-          <span class="publication-type {{ publication.type }}">{{ publication.type_label | default: publication.type }}</span>
-          <span class="publication-year">{{ publication.year }}</span>
-        </div>
-        <h3 class="publication-title">
-          <a href="{{ publication.url | relative_url }}">{{ publication.title }}</a>
-        </h3>
-        
-        {% if publication.authors %}
-        <div class="publication-authors">
-          {% for author in publication.authors %}
-            {% if author == "takuizum" %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}
-            {% unless forloop.last %}, {% endunless %}
-          {% endfor %}
-        </div>
-        {% endif %}
-        
-        {% if publication.journal %}
-        <div class="publication-journal">{{ publication.journal }}</div>
-        {% endif %}
-        
-        {% if publication.abstract %}
-        <p class="publication-abstract">{{ publication.abstract }}</p>
-        {% endif %}
+## 発表論文・著書
 
-        {% if publication.links %}
-        <div class="publication-links">
-          {% for link in publication.links %}
-            <a href="{{ link.url }}" class="pub-link" target="_blank">
-              <i class="{{ link.icon }}"></i> {{ link.label }}
-            </a>
-          {% endfor %}
-        </div>
-        {% endif %}
-      </div>
-      {% endfor %}
-    </div>
+{% assign publications_by_year = site.publications | group_by: 'year' | sort: 'name' | reverse %}
 
-    <div class="stats-section">
-      <h2 class="section-title">研究実績統計</h2>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">15+</div>
-          <div class="stat-label">査読付き論文</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">25+</div>
-          <div class="stat-label">学会発表</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">3</div>
-          <div class="stat-label">出版書籍</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">8</div>
-          <div class="stat-label">ソフトウェア</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">500+</div>
-          <div class="stat-label">引用数</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">5</div>
-          <div class="stat-label">研究助成</div>
-        </div>
-      </div>
-    </div>
+{% for year_group in publications_by_year %}
+### {{ year_group.name }}年
+
+{% assign year_publications = year_group.items | sort: 'type' %}
+{% for publication in year_publications %}
+<div class="publication-item">
+  <h4><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h4>
+  <p><strong>著者:</strong> {{ publication.authors }}</p>
+  <p><strong>掲載先:</strong> {{ publication.venue }}{% if publication.volume %}, {{ publication.volume }}{% endif %}{% if publication.pages %}, pp. {{ publication.pages }}{% endif %}{% if publication.publisher %} ({{ publication.publisher }}){% endif %}</p>
+  {% if publication.doi %}
+  <p><strong>DOI:</strong> <a href="https://doi.org/{{ publication.doi }}" target="_blank">{{ publication.doi }}</a></p>
+  {% endif %}
+  {% if publication.abstract %}
+  <p><strong>概要:</strong> {{ publication.abstract }}</p>
+  {% endif %}
+  
+  <!-- APA 7th Style Citation -->
+  <div class="apa-citation">
+    <strong>APA引用:</strong> 
+    {% if publication.type == 'journal' %}
+      {{ publication.authors }} ({{ publication.year }}). {{ publication.title }}. <em>{{ publication.venue }}</em>{% if publication.volume %}, <em>{{ publication.volume }}</em>{% endif %}{% if publication.pages %}, {{ publication.pages }}{% endif %}. {% if publication.doi %}https://doi.org/{{ publication.doi }}{% endif %}
+    {% elsif publication.type == 'conference' or publication.type == 'international_conference' %}
+      {{ publication.authors }} ({{ publication.year }}). {{ publication.title }}. In <em>{{ publication.venue }}</em>{% if publication.pages %} (pp. {{ publication.pages }}){% endif %}. {% if publication.publisher %}{{ publication.publisher }}.{% endif %} {% if publication.doi %}https://doi.org/{{ publication.doi }}{% endif %}
+    {% elsif publication.type == 'book' %}
+      {{ publication.authors }} ({{ publication.year }}). <em>{{ publication.title }}</em>. {{ publication.venue }}. {% if publication.doi %}https://doi.org/{{ publication.doi }}{% endif %}
+    {% endif %}
   </div>
-</section>
+</div>
+<hr>
+{% endfor %}
+{% endfor %}
+
+## 論文の種類別
+
+### 査読付きジャーナル論文
+{% assign journal_papers = site.publications | where: 'type', 'journal' | sort: 'year' | reverse %}
+{% for publication in journal_papers %}
+- **{{ publication.title }}** ({{ publication.year }}) - {{ publication.venue }}{% if publication.doi %} [DOI: {{ publication.doi }}](https://doi.org/{{ publication.doi }}){% endif %}
+{% endfor %}
+
+### 国内学会発表
+{% assign domestic_conference_papers = site.publications | where: 'type', 'conference' | sort: 'year' | reverse %}
+{% for publication in domestic_conference_papers %}
+- **{{ publication.title }}** ({{ publication.year }}) - {{ publication.venue }}{% if publication.doi %} [DOI: {{ publication.doi }}](https://doi.org/{{ publication.doi }}){% endif %}
+{% endfor %}
+
+<!-- 国際学会発表（現在実績なし）
+### 国際学会発表
+{% assign international_conference_papers = site.publications | where: 'type', 'international_conference' | sort: 'year' | reverse %}
+{% for publication in international_conference_papers %}
+- **{{ publication.title }}** ({{ publication.year }}) - {{ publication.venue }}{% if publication.doi %} [DOI: {{ publication.doi }}](https://doi.org/{{ publication.doi }}){% endif %}
+{% endfor %}
+-->
+
+### 書籍
+{% assign books = site.publications | where: 'type', 'book' | sort: 'year' | reverse %}
+{% for publication in books %}
+- **{{ publication.title }}** ({{ publication.year }}) - {{ publication.venue }}{% if publication.doi %} [DOI: {{ publication.doi }}](https://doi.org/{{ publication.doi }}){% endif %}
+{% endfor %}
