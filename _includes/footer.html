@@ -21,7 +21,11 @@
             <i class="fab fa-github"></i>
           </a>
           {% endif %}
-          {% if site.social.twitter %}
+          <!-- Explicit Twitter link -->
+          <a href="https://twitter.com/takuizum" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          {% if site.social.twitter and site.social.twitter != "takuizum" %}
           <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>

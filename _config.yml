@@ -111,12 +111,8 @@ navigation:
   - title: "ブログ"
     url: "/blog/"
 
-# Social links
-social:
-  github: takuizum
-  twitter: # your_handle
-  linkedin: # your_profile
-  email: your.email@example.com
+# Social links (active configuration)
+# Note: The primary social configuration is defined above in the author section
 
 # Analytics (optional)
 # google_analytics: UA-XXXXXXXX-X
