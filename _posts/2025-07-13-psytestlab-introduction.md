@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ja" /><updated>2025-07-13T22:14:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">PsyTestLab</title><subtitle>データサイエンス、統計学、プログラミングの分野で研究・開発に従事。 学術研究から実践的なソリューション開発まで幅広く取り組んでいます。</subtitle><author><name>PsyTestLab</name><email>sep10.taku.izum@gmail.com</email></author><entry><title type="html">PsyTestLabを始めた理由 - 心理測定学の実践的価値</title><link href="http://localhost:4000/blog/2025/07/13/psytestlab-introduction/" rel="alternate" type="text/html" title="PsyTestLabを始めた理由 - 心理測定学の実践的価値" /><published>2025-07-13T10:00:00+09:00</published><updated>2025-07-13T10:00:00+09:00</updated><id>http://localhost:4000/blog/2025/07/13/psytestlab-introduction</id><content type="html" xml:base="http://localhost:4000/blog/2025/07/13/psytestlab-introduction/"><![CDATA[こんにちは、PsyTestLab の板宮拓巳です。今日は、このブログを立ち上げた背景と、私がどんな想いでこの活動を始めたのかをお話ししたいと思います。
+---
+layout: post
+title: "PsyTestLabを始めた理由 - 心理測定学の実践的価値"
+date: 2025-07-13 10:00:00 +0900
+categories: [introduction, philosophy]
+tags: [psychometrics, education, data-science, IRT, introduction]
+author: "板宮 拓巳"
+description: "PsyTestLabの立ち上げの背景と心理測定学への想い、そして今後の発信内容について"
+excerpt: "このブログの最初の投稿として、なぜPsyTestLabを立ち上げたのか、そして心理測定学という分野への想いについてお話しします。"
+---
+
+こんにちは、PsyTestLab の板宮拓巳です。今日は、このブログを立ち上げた背景と、私がどんな想いでこの活動を始めたのかをお話ししたいと思います。
 
 大学院の修士課程を修了してから教育系の研究所や外資系企業でさまざまなテストデータやアンケート調査の分析に携わる中で、いつも感じていたのは「もっとスピーディーに、もっと手軽に、現場が本当に必要としている分析を届けられたら」という思いでした。大きな組織になるほど、アイデアを形にするまでに時間もコストもかかり、クライアントの求めるタイミングで提案を実行に移せないことが少なくありません。より多くの企業や研究者のデータ分析や課題解決に関わってみたいという興味関心が、兼業として個人や企業のデータ分析のサポートを始めるきっかけとなりました。。
 
@@ -20,4 +31,4 @@ PsyTestLab の強みは、何より「項目反応理論（IRT）をはじめと
 
 ---
 
-このブログでは、心理計量学の分析手法解説、コードチュートリアルなどを継続的に発信していく予定です。ぜひ次回の投稿もお楽しみに。ご質問やご相談はお気軽にどうぞ！]]></content><author><name>板宮 拓巳</name></author><category term="introduction" /><category term="philosophy" /><category term="psychometrics" /><category term="education" /><category term="data-science" /><category term="IRT" /><category term="introduction" /><summary type="html"><![CDATA[PsyTestLabの立ち上げの背景と心理測定学への想い、そして今後の発信内容について]]></summary></entry></feed>
+このブログでは、心理計量学の分析手法解説、コードチュートリアルなどを継続的に発信していく予定です。ぜひ次回の投稿もお楽しみに。ご質問やご相談はお気軽にどうぞ！  
