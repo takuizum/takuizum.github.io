@@ -1,11 +1,11 @@
+- title: "心理測定・テスト開発"
+  description: "項目反応理論（IRT）を用いたテスト開発、学力・能力測定、評価システムの設計・分析サポートを提供します。"
+  icon: "fas fa-chart-line"
+
+- title: "統計解析・データサイエンス"
+  description: "RやPythonを使用した高度な統計解析、機械学習モデリング、データ分析システムの開発。"
+  icon: "fas fa-calculator"
+
 - title: "研究コンサルティング"
-  description: "統計解析、データサイエンス、機械学習に関する研究サポートを提供します。"
+  description: "心理学・教育学研究における統計的手法の選択、分析設計、結果解釈に関するコンサルティング。"
   icon: "fas fa-microscope"
-
-- title: "システム開発"
-  description: "R、Python、JavaScriptを使用したデータ分析システムやWebアプリケーションの開発。"
-  icon: "fas fa-code"
-
-- title: "教育・研修"
-  description: "統計学やプログラミングに関する教育プログラムの設計と実施。"
-  icon: "fas fa-graduation-cap"
