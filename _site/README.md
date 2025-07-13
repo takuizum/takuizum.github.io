@@ -320,4 +320,3 @@ npm run deploy
 ## 📧 お問い合わせ
 
 - **GitHub Issues**: [Issues ページ](https://github.com/takuizum/takuizum.github.io/issues)
-- **Email**: your.email@example.com
