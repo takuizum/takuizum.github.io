@@ -6,9 +6,6 @@ gem "jekyll", "~> 3.10.0"
 # Jekyll Cayman Theme (修正済み)
 gem "jekyll-theme-cayman"
 
-# BibTeX support for Jekyll
-gem "jekyll-scholar"
-
 # GitHub Pages compatibility - GitHubが使用するJekyllバージョンに合わせる
 gem "github-pages", group: :jekyll_plugins
 
