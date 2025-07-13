@@ -14,12 +14,18 @@ header_page_ref: home
 # Author settings
 author:
   name: PsyTestLab
-  email: your.email@example.com
+  email: sep10.taku.izum@gmail.com
   bio: >-
     研究者・データサイエンティスト。統計学・心理測定学・プログラミングの分野で活動。
   github: takuizum
-  twitter: # your_twitter_handle
+  twitter: takuizum
   linkedin: # your_linkedin_profile
+
+# Social links
+social:
+  email: sep10.taku.izum@gmail.com
+  github: takuizum
+  twitter: takuizum
 
 # Build settings
 markdown: kramdown
