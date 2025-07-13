@@ -50,15 +50,6 @@ collections:
     output: true
     permalink: /blog/:year/:month/:day/:title/
 
-# Collections
-collections:
-  publications:
-    output: true
-    permalink: /:collection/:name/
-  posts:
-    output: true
-    permalink: /blog/:year/:month/:day/:title/
-
 # Sass settings
 sass:
   sass_dir: _sass
@@ -91,13 +82,6 @@ exclude:
   - setup-profile.ps1
   # Setup and documentation files
   - SETUP-WINDOWS.md
-  - publications_new.md
-  # Empty publication markdown files (content is in _publications folder)
-  - advanced-irt-models.md
-  - itamiya2021handbook.md
-  - itamiya2022statistical.md
-  - itamiya2023bayesian.md
-  - itamiya2024advanced.md
 
 # Default layouts
 defaults:
