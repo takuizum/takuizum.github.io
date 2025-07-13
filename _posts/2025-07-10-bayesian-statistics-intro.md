@@ -4,7 +4,7 @@ title: "ベイズ統計学入門：MCMCから実践まで"
 date: 2025-07-10
 categories: [statistics]
 tags: [ベイズ統計, MCMC, Stan]
-author: takuizum
+author: PsyTestLab
 excerpt: "ベイズ統計学の基礎概念から、MCMCサンプリング、実際のデータ分析まで包括的に解説します。Stanを使った実装例も含めて、初学者にも分かりやすく説明します。"
 ---
 

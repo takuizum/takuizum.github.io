@@ -1,4 +1,4 @@
-# takuizum.github.io
+# PsyTestLab
 
 ## 概要
 
@@ -196,6 +196,47 @@ Get-Process ruby* | Stop-Process -Force
 
 # または別ポート使用
 bundle exec jekyll serve --port 4001
+```
+
+### 🎯 開発再開用バッチスクリプト
+
+編集を再開する際に便利なバッチスクリプトが用意されています：
+
+#### 完全再起動スクリプト
+```bat
+# ポートクリア → 再ビルド → サーバー起動
+.\restart-dev-server.bat
+```
+- ポート4000を使用中のプロセスを全て終了
+- サイトを完全に再ビルド
+- ライブリロード付きサーバーを起動
+
+#### クイック起動スクリプト
+```bat
+# ポートクリア → サーバー起動（ビルドスキップ）
+.\quick-start.bat
+```
+- ポートクリアのみ実行
+- 即座にサーバー起動（高速）
+
+#### VS Code ライブエディット環境
+```bat
+# VS Code起動 → ポートクリア → サーバー起動
+.\vscode-live-edit.bat
+```
+- VS Code でプロジェクトを自動で開く
+- ポートクリア後にサーバー起動
+- ワンクリックで完全な開発環境を構築
+
+#### PowerShell 関数版
+```powershell
+# PowerShell関数を読み込み
+. .\jekyll-functions.ps1
+
+# 使用方法
+jr    # 完全再起動（ポートクリア→再ビルド→サーバー起動）
+jq    # クイック起動（ポートクリア→サーバー起動）
+jv    # VS Code + Jekyll起動
 ```
 
 ## 🔄 ライブ編集ワークフロー

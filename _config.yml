@@ -1,5 +1,5 @@
 # Site settings
-title: takuizum
+title: PsyTestLab
 tagline: データサイエンス・心理測定学・統計分析
 description: >-
   データサイエンス、統計学、プログラミングの分野で研究・開発に従事。
@@ -13,7 +13,7 @@ header_page_ref: home
 
 # Author settings
 author:
-  name: takuizum
+  name: PsyTestLab
   email: your.email@example.com
   bio: >-
     研究者・データサイエンティスト。統計学・心理測定学・プログラミングの分野で活動。
@@ -31,11 +31,11 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate
+  # - jekyll-paginate
 
-# Pagination
-paginate: 5
-paginate_path: "/blog/page:num/"
+# Pagination (一時的に無効化)
+# paginate: 5
+# paginate_path: "/blog/page:num/"
 
 # Collections
 collections:
@@ -82,7 +82,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "takuizum"
+      author: "PsyTestLab"
   - scope:
       path: ""
       type: "publications"
