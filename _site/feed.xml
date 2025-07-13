@@ -1,23 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ja" /><updated>2025-07-13T22:18:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">PsyTestLab</title><subtitle>データサイエンス、統計学、プログラミングの分野で研究・開発に従事。 学術研究から実践的なソリューション開発まで幅広く取り組んでいます。</subtitle><author><name>PsyTestLab</name><email>sep10.taku.izum@gmail.com</email></author><entry><title type="html">PsyTestLabを始めた理由 - 心理測定学の実践的価値</title><link href="http://localhost:4000/blog/2025/07/13/psytestlab-introduction/" rel="alternate" type="text/html" title="PsyTestLabを始めた理由 - 心理測定学の実践的価値" /><published>2025-07-13T10:00:00+09:00</published><updated>2025-07-13T10:00:00+09:00</updated><id>http://localhost:4000/blog/2025/07/13/psytestlab-introduction</id><content type="html" xml:base="http://localhost:4000/blog/2025/07/13/psytestlab-introduction/"><![CDATA[こんにちは、PsyTestLab の板宮拓巳です。今日は、このブログを立ち上げた背景と、私がどんな想いでこの活動を始めたのかをお話ししたいと思います。
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ja" /><updated>2025-07-13T23:12:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">PsyTestLab</title><subtitle>データサイエンス、統計学、プログラミングの分野で研究・開発に従事。 学術研究から実践的なソリューション開発まで幅広く取り組んでいます。</subtitle><author><name>PsyTestLab</name><email>sep10.taku.izum@gmail.com</email></author><entry><title type="html">PsyTestLabを始めた理由 - 心理測定学の実践的価値</title><link href="http://localhost:4000/blog/2025/07/13/psytestlab-introduction/" rel="alternate" type="text/html" title="PsyTestLabを始めた理由 - 心理測定学の実践的価値" /><published>2025-07-13T10:00:00+09:00</published><updated>2025-07-13T10:00:00+09:00</updated><id>http://localhost:4000/blog/2025/07/13/psytestlab-introduction</id><content type="html" xml:base="http://localhost:4000/blog/2025/07/13/psytestlab-introduction/"><![CDATA[<p>こんにちは、PsyTestLab の板宮拓巳です。今日は、このブログを立ち上げた背景と、私がどんな想いでこの活動を始めたのかをお話ししたいと思います。</p>
 
-大学院の修士課程を修了してから教育系の研究所や外資系企業でさまざまなテストデータやアンケート調査の分析に携わる中で、いつも感じていたのは「もっとスピーディーに、もっと手軽に、現場が本当に必要としている分析を届けられたら」という思いでした。大きな組織になるほど、アイデアを形にするまでに時間もコストもかかり、クライアントの求めるタイミングで提案を実行に移せないことが少なくありません。より多くの企業や研究者のデータ分析や課題解決に関わってみたいという興味関心が、兼業として個人や企業のデータ分析のサポートを始めるきっかけとなりました。。
+<p>大学院の修士課程を修了してから教育系の研究所や外資系企業でさまざまなテストデータやアンケート調査の分析に携わる中で、いつも感じていたのは「もっとスピーディーに、もっと手軽に、現場が本当に必要としている分析を届けられたら」という思いでした。大きな組織になるほど、アイデアを形にするまでに時間もコストもかかり、クライアントの求めるタイミングで提案を実行に移せないことが少なくありません。より多くの企業や研究者のデータ分析や課題解決に関わってみたいという興味関心が、兼業として個人や企業のデータ分析のサポートを始めるきっかけとなりました。</p>
 
----
+<p>もともと、大学・大学院を通してテスト理論に関する研究を学びました。当時のテーマは異なるテストの得点を比較可能にする技術であり、いわゆる等化（equating）や垂直尺度化と呼ばれる分析手法です。修士論文では必要な数値計算やシミュレーションスクリプトをRとC++で作成していました。テスト理論は心理統計分野の一分野ですが、中でも項目反応理論を使った実務に非常に近いテーマに関心を持っている研究者は日本では非常に少ないです。こうした経験を学生時代に積むことができたことは非常に恵まれた機会であったと感じています。</p>
 
-PsyTestLab を立ち上げて最初に取り組んだのは、大規模試験会場のキャパシティコントロールでした。受験者の人数やセキュリティ要員、会場の収容人数、さらには機材の配置まですべて考慮して、「一日に何人受験可能か」「どの団体を優先すべきか」を公正かつ効率的に決めたいというご依頼です。実は、この問題を解く鍵は、長年テスト自動構成で磨いてきた“組み合わせ最適化”のノウハウにありました。結果として、わずか数日で最適なプランを提示し、運営コストを約10％削減しつつ受験者満足度を落とさないという成果につなげることができました。この成功体験こそが、PsyTestLab の信念を形づくっています。
+<hr />
 
----
+<p>PsyTestLab を立ち上げたきっかけは大規模試験会場のキャパシティコントロールの分析依頼が来たことでした。受験者の人数やセキュリティ要員、会場の収容人数、さらには機材の配置まですべて考慮して、「一日に何人受験可能か」「どの団体を優先すべきか」を公正かつ効率的に決めたいというご依頼です。実は、この問題を解く鍵は、長年テスト自動構成で磨いてきた“組み合わせ最適化”のノウハウにありました。結果として、すでに心得のある技術だったということもあり、わずか数日で最適なプランを提示し受験者満足度を落とさないという成果につなげることができました。</p>
 
-クライアントとの最初のやりとりは、いつもオンラインミーティングから始まります。「どんなアウトプットを期待していますか？」「予算や納期の制約は？」といった基本的なところから、データの規模感やイレギュラー対応のタイミングまで、細かくお聞きします。例えば、試験日が急きょ延長になったり、受験者数が当初の想定より大幅に増減したりといったトラブルが発生した場合でも、その都度スケジュールを柔軟に調整しながら伴走することで、安心してプロジェクトを進められる体制を整えています。
+<p>テスト理論を中心に身につけてきた分析スキルが、様々な分野に応用できると実感し、より多くの問題に取り組んでみたいと感じるようになりました。</p>
 
----
+<hr />
 
-PsyTestLab の強みは、何より「項目反応理論（IRT）をはじめとする心理計量学の高い専門性」と「最新研究をスピーディーに実データに応用する機動力」です。単にモデルを当てはめるだけではなく、実際の教育現場やビジネスの課題に即した可視化やレポート作成までお手伝いします。学力テストはもちろん、社内アンケートや質問紙調査の分析にも精通しているので、「この手法は教育分野だけ」「あの分析は市場調査向けだけ」という壁を超えて、オールラウンドにサポートできるのが自信です。
+<p>PsyTestLab の強みは、何より「項目反応理論（IRT）をはじめとする心理計量学の高い専門性」と「最新研究をスピーディーに実データに応用する機動力」です。単にモデルを当てはめるだけではなく、実際の教育現場やビジネスの課題に即した可視化やレポート作成までお手伝いします。学力テストはもちろん、社内アンケートや質問紙調査の分析にも精通しているので、「この手法は教育分野だけ」「あの分析は市場調査向けだけ」という壁を超えて、オールラウンドにサポートできるのが自信です。
+パッケージ化されたプランは存在しないので、解決すべき課題に対してひとつひとつ最適なアプローチを考えていくことができます。</p>
 
----
+<hr />
 
-そして、これからのビジョンですが、私が描くのは「あらゆる規模・あらゆる領域のテストやアセスメント品質の底上げ」です。かつては平均値集計や単純なRaschモデルで事足りていましたが、社会が求めるスキルや特性はますます複雑化しています。だからこそ、最新の心理計量学と機械学習をハイブリッドし、ハイレベルでかつ実践的なソリューションを提供していきたいと考えています。3年後、5年後には企業や研究機関との共同研究を通じてオープンソースツールを公開し、分析技術の裾野を広げる存在になりたいと考えています。
+<p>PsyTestLab での活動を通して実現したいことは、「さまざまな規模・多様な領域のテストやアセスメント品質の底上げ」です。かつては平均値集計や単純なRaschモデルで事足りていましたが、社会が求めるスキルや特性はますます複雑化しています。だからこそ、最新の心理計量学と機械学習をハイブリッドし、ハイレベルでかつ実践的なソリューションを提供していきたいと考えています。3年後、5年後には企業や研究機関との共同研究を通じてオープンソースツールを公開し、分析技術の裾野を広げる存在になりたいと考えています。</p>
 
----
+<hr />
 
-このブログでは、心理計量学の分析手法解説、コードチュートリアルなどを継続的に発信していく予定です。ぜひ次回の投稿もお楽しみに。ご質問やご相談はお気軽にどうぞ！]]></content><author><name>板宮 拓巳</name></author><category term="introduction" /><category term="philosophy" /><category term="psychometrics" /><category term="education" /><category term="data-science" /><category term="IRT" /><category term="introduction" /><summary type="html"><![CDATA[PsyTestLabの立ち上げの背景と心理測定学への想い、そして今後の発信内容について]]></summary></entry></feed>
+<p>このブログでは、心理計量学の分析手法解説、コードチュートリアルなどを継続的に発信していく予定です。ぜひ次回の投稿もお楽しみに。ご質問やご相談はお気軽にどうぞ！</p>]]></content><author><name>板宮 拓巳</name></author><category term="introduction" /><category term="philosophy" /><category term="psychometrics" /><category term="education" /><category term="data-science" /><category term="IRT" /><category term="introduction" /><summary type="html"><![CDATA[PsyTestLabの立ち上げの背景と心理測定学への想い、そして今後の発信内容について]]></summary></entry></feed>

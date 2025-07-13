@@ -522,16 +522,9 @@
     padding: 4rem 0;
 }
 
-.blog-grid {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 3rem;
-    max-width: 1200px;
+.blog-simple {
+    max-width: 800px;
     margin: 0 auto;
-}
-
-.blog-main {
-    min-width: 0;
 }
 
 .posts-list {
@@ -588,22 +581,6 @@
     margin-bottom: 1rem;
 }
 
-.post-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.tag {
-    background: var(--light-blue);
-    color: var(--accent-blue);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
 .read-more {
     color: var(--accent-blue);
     text-decoration: none;
@@ -622,89 +599,6 @@
 
 .read-more:hover i {
     transform: translateX(3px);
-}
-
-.blog-sidebar {
-    position: sticky;
-    top: 2rem;
-    height: fit-content;
-}
-
-.sidebar-section {
-    background: white;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: var(--card-shadow);
-}
-
-.sidebar-section h3 {
-    margin: 0 0 1rem 0;
-    color: var(--dark-text);
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.category-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.category-link {
-    color: var(--medium-text);
-    text-decoration: none;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.category-link:hover {
-    background: var(--light-blue);
-    color: var(--accent-blue);
-}
-
-.recent-posts {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.recent-post h4 {
-    margin: 0 0 0.25rem 0;
-    font-size: 0.9rem;
-}
-
-.recent-post a {
-    color: var(--dark-text);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.recent-post a:hover {
-    color: var(--accent-blue);
-}
-
-.recent-post time {
-    font-size: 0.8rem;
-    color: var(--light-text);
-}
-
-.feed-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--accent-blue);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.feed-link:hover {
-    color: var(--cayman-green);
 }
 
 .no-posts {
@@ -822,16 +716,6 @@
     border-radius: 6px;
     overflow-x: auto;
     margin: 1.5rem 0;
-}
-
-.post-tags {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e1e4e8;
-}
-
-.post-tags .tag {
-    margin-right: 0.5rem;
 }
 
 @media (max-width: 768px) {
