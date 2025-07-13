@@ -77,6 +77,27 @@ exclude:
   - package-lock.json
   - webpack.config.js
   - rollup.config.js
+  # Development scripts and batch files
+  - "*.bat"
+  - "*.ps1"
+  - debug-start.bat
+  - fast-start.bat
+  - quick-start.bat
+  - restart-dev-server.bat
+  - simple-start.bat
+  - vscode-live-edit.bat
+  - jekyll-functions.ps1
+  - jekyll-rebuild.ps1
+  - setup-profile.ps1
+  # Setup and documentation files
+  - SETUP-WINDOWS.md
+  - publications_new.md
+  # Empty publication markdown files (content is in _publications folder)
+  - advanced-irt-models.md
+  - itamiya2021handbook.md
+  - itamiya2022statistical.md
+  - itamiya2023bayesian.md
+  - itamiya2024advanced.md
 
 # Default layouts
 defaults:
